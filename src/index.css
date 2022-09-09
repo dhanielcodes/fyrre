@@ -1,0 +1,627 @@
+/* base styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'General Sans', sans-serif;
+    color: #000;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+body {
+    padding-top: 20px;
+    overflow-x: hidden;
+}
+
+.website {
+    width: 96%;
+    margin: auto;
+    padding: 20px 0;
+}
+
+nav .name {
+    width: 96%;
+    margin: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid black;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+header .name {
+    text-align: center;
+    font-size: 18vw;
+    font-weight: 600;
+}
+
+header .news {
+    background-color: black;
+    padding: 14px;
+    color: white;
+    font-weight: 500;
+}
+
+header .about {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+    padding: 60px 0;
+}
+
+header .about_name {
+    font-size: 100px;
+    font-weight: 600;
+}
+
+header .about_content_text1 {
+    font-size: 20px;
+    line-height: 40px;
+    font-weight: 400;
+}
+
+header .banner {
+    width: 100%;
+    position: relative;
+}
+
+header .banner img {
+    width: 100%;
+}
+
+section {
+    margin: 50px 0;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-gap: 40px;
+}
+
+section .work {
+    display: flex;
+    border-bottom: 1px solid;
+    padding-bottom: 60px;
+    margin-bottom: 60px;
+}
+
+section .work:last-child {
+    border: none
+}
+
+section .work_img {
+    width: 700px;
+    margin-right: 40px;
+}
+
+section .work_desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+section .work_desc_title {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+section .work_desc_content {
+    font-size: 24px;
+    margin-top: 20px;
+    line-height: 45px;
+}
+
+section .work_img img {
+    width: 100%;
+}
+
+section .work_desc_about {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+section .work_desc_about_dets {
+    display: flex;
+    font-weight: 600;
+}
+
+section .work_desc_about_dets div {
+    margin-right: 30px;
+}
+
+section .work_desc_about_dets span {
+    font-weight: 400;
+}
+
+section .work_desc_about_type {
+    border: 1px solid;
+    border-radius: 10000px;
+    padding: 10px 20px;
+}
+
+section .other {
+    width: 100%;
+}
+
+section .other_top_title {
+    font-weight: 600;
+}
+
+section .other_top_date {
+    font-size: 50px;
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+section .other_popular {
+    margin-top: 40px;
+}
+
+section .other_popular_popular {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 30px;
+    border-bottom: 1px solid;
+    margin-top: 42px;
+}
+
+section .other_popular_popular_content {
+    width: 100%;
+}
+
+section .other_popular_popular_no {
+    font-size: 20px;
+    margin-right: 40px;
+}
+
+section .other_popular_popular_title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+section .other_popular_popular_about {
+    font-weight: 600;
+}
+
+section .other_popular_popular_about span {
+    font-weight: 400;
+}
+
+section form {
+    margin-top: 40px;
+    padding: 40px;
+    background-color: #F8F8F8;
+}
+
+section form .form_title {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+section form .form_desc {
+    font-size: 38px;
+    font-weight: 600;
+}
+
+section form input {
+    width: 100%;
+    padding: 20px;
+    font-size: 18px;
+    margin: 20px 0;
+    border: none;
+    outline: none;
+}
+
+section form .form_button {
+    width: 130px;
+    margin-left: auto;
+}
+
+section form .form_button button {
+    background: #000;
+    color: #FFF;
+    text-decoration: none;
+    padding: 20px 0;
+    margin-right: auto;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border: none;
+}
+
+.section_more {
+    font-weight: 600;
+    padding-bottom: 150px;
+    border-bottom: 1px solid;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.section_more img {
+    margin-left: 10px;
+}
+
+main .title {
+    font-size: 100px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+main .experiences {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+main .experience {
+    padding: 50px;
+    border: 1px solid;
+}
+
+main .experience_img {
+    width: 100%;
+}
+
+main .experience_desc {
+    margin-top: 20px;
+}
+
+main .experience_desc_title {
+    font-size: 34px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+main .experience_desc_about_dets {
+    display: flex;
+    font-weight: 600;
+    margin-top: 40px;
+}
+
+main .experience_desc_about_dets div {
+    margin-right: 30px;
+}
+
+main .experience_desc_about_dets span {
+    font-weight: 400;
+}
+
+aside {
+    margin: 140px 0;
+    border-top: 1px solid;
+    padding-top: 60px;
+}
+
+aside .title {
+    font-size: 100px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+aside .author_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+aside .author_more {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.author_more img {
+    margin-left: 10px;
+}
+
+aside .authors {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 60px;
+}
+
+aside .author_profile {
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    border: 1px solid;
+}
+
+aside .author_profile_img {
+    border-radius: 10000px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-right: 40px;
+}
+
+aside .author_profile_desc_name {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+aside .author_profile_desc_about {
+    display: flex;
+    font-weight: 600;
+    margin-top: 24px;
+}
+
+aside .author_profile_desc_about div {
+    margin-right: 30px;
+}
+
+aside .author_profile_desc_about span {
+    font-weight: 400;
+}
+
+footer {
+    margin-top: 40px;
+    background: black;
+    padding: 200px 0;
+    padding-bottom: 60px;
+}
+
+footer .main {
+    width: 90%;
+    margin-top: 40px;
+    margin: auto;
+    color: #fff;
+}
+
+footer .main_top {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .title {
+    color: white;
+    font-size: 78px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+footer form {
+    display: flex;
+    align-items: center;
+    width: 34%;
+}
+
+footer form input {
+    width: 100%;
+    padding: 20px;
+    font-size: 18px;
+    margin: 20px 0;
+    border: none;
+    outline: none;
+    margin-right: 20px;
+}
+
+footer form .form_button {
+    width: 50%;
+}
+
+footer form .form_button button {
+    background: #FFF;
+    color: #000;
+    text-decoration: none;
+    padding: 20px 0;
+    margin-right: auto;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border: none;
+}
+
+footer .end {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+
+footer .end_side {
+    display: flex;
+    margin-top: 200px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+footer .end_name {
+    color: white;
+    margin-bottom: 40px;
+    font-weight: 600;
+    width: 30%;
+    font-size: 24px;
+}
+
+footer .end_links {
+    color: #FFF;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+footer .end_links_tab {
+    padding-top: 30px;
+    border-top: 1px solid rgba(128, 128, 128, 0.149);
+    width: 100%;
+    margin-right: 40px;
+}
+
+footer .end_links div div {
+    margin-bottom: 20px;
+    color: #FFF;
+}
+
+footer .end_copy {
+    color: white
+}
+
+footer img {
+    margin-left: 20px;
+}
+
+@media screen and (max-width: 1536px) {
+    section {
+        margin: 50px 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 40px;
+    }
+    section .works {
+        grid-row: 1;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    header .about {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    main .experiences {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    section .work {
+        flex-direction: column;
+    }
+    section .work_img {
+        width: 400px;
+        margin-bottom: 20px;
+    }
+    section .other_popular_popular {
+        flex-direction: column;
+    }
+    section .other_popular_popular_content {
+        width: 100%;
+    }
+    section .other_popular_popular_no {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    aside .author_top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    aside .authors {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    footer .main_top {
+        flex-direction: column;
+    }
+    footer form {
+        margin-top: 20px;
+        width: 100%;
+    }
+    footer .end_name {
+        width: 100%;
+    }
+    footer .end_side {
+        flex-direction: column;
+    }
+    footer .end_links {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .website {
+        width: 90%;
+    }
+    section .work_desc_content {
+        font-size: 20px;
+    }
+    section .work_desc_about {
+        margin-top: 40px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    section .work_desc_about_dets {
+        flex-direction: column;
+    }
+    section .work_desc_about_dets_date {
+        margin: 30px 0;
+    }
+    section .work_desc_about_type {
+        margin-top: 40px;
+    }
+    main .experiences {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    footer {
+        margin-top: 40px;
+        background: black;
+        padding: 200px 0;
+        padding-bottom: 60px;
+    }
+    footer .title {
+        color: white;
+        font-size: 48px;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+    footer .title img {
+        width: 40px;
+        margin-left: 0;
+    }
+    footer .end {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+    footer .end_name {
+        margin-top: 40px
+    }
+    footer .end_copy {
+        color: white;
+        margin-top: 20px;
+    }
+    footer img.tweet {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    header .about_name {
+        font-size: 40px;
+    }
+    section .work_img,
+    section .other_cover {
+        width: 100%;
+    }
+    main .title,
+    aside .title {
+        font-size: 40px;
+    }
+    aside .author_profile {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    aside .author_profile_img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    main .experience {
+        padding: 40px;
+    }
+    footer .title {
+        color: white;
+        font-size: 28px;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+    footer .title img {
+        width: 28px;
+    }
+}
