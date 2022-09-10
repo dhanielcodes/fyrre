@@ -4,7 +4,7 @@ import { Navbar } from "./components"
 import { Header, Works, Experience, Contact, Authors } from "./views"
 import { useState, useRef, useEffect } from 'react'
 import gsap from 'gsap'
-import ScrollSmoother from "gsap-trial/ScrollSmoother";
+import ScrollSmoother from "./ScrollSmoother";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 
