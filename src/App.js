@@ -1,32 +1,23 @@
 import './App.css';
 import './index.css';
+import './loco.css';
 import { Navbar } from "./components"
 import { Header, Works, Experience, Contact, Authors } from "./views"
 import { useState, useRef, useEffect } from 'react'
 import gsap from 'gsap'
-import ScrollSmoother from "gsap-trial/ScrollSmoother";
 import ScrollTrigger from "gsap/ScrollTrigger";
-
+import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
 
 function App() {
 
   const [preloader, setPreloader] = useState(false)
 
-  gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
+  gsap.registerPlugin(ScrollTrigger)
+
+  let containerMain = useRef(null)
 
   useEffect(() => {
-    let rotateSetter = gsap.quickTo('.work_img', 'skewY')
-    let clamp = gsap.utils.clamp(-30, 30)
-    let smoother = ScrollSmoother.create({
-      wrapper: '.App',
-      content: '.center_page',
-      smooth: 2,
-      effects: true,
-      onUpdate: (self) => {
-        rotateSetter(clamp(self.getVelocity()/ -200))
-      },
-      onStop: () => rotateSetter(0)
-    })
+
   })
 
 
@@ -48,16 +39,26 @@ function App() {
         ) :
 
         (
-          <div className="center_page">
-              <Navbar />
-              <div className='website'>
-                <Header />
-                <Works />
-                <Experience />
-                <Authors/>
+          <LocomotiveScrollProvider options={
+            {
+              smooth: true,
+              lerp: 0.06,
+              tablet: {
+                breakpoint: 768,
+              },
+            }
+          }>
+            <div data-scroll-container  ref={el => containerMain = el} className="center_page" id='main'>
+                <Navbar data-scroll-section />
+                <div className='website'>
+                  <Header data-scroll-section />
+                  <Works data-scroll-section />
+                  <Experience data-scroll-section />
+                  <Authors data-scroll-section/>
+                </div>
+              <Contact data-scroll-section/>
               </div>
-             <Contact/>
-            </div>
+          </LocomotiveScrollProvider>
           )
       
       }
