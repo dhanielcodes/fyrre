@@ -22,7 +22,28 @@ function App() {
       smooth: true
     })
 
-    setTimeout(function(){ scroll.update(); }, 50);
+    setTimeout(() => {
+      scroll.update();
+    }, 500);
+
+    scroll.on("scroll", ScrollTrigger.update);
+
+    /* ScrollTrigger.scrollerProxy(scroll.el, {
+      scrollTop(value) {
+        return arguments.length
+          ? scroll.scrollTo(value, 0, 0)
+          : scroll.scroll.instance.scroll.y;
+      },
+
+      getBoundingClientRect() {
+        return {
+          top: 0,
+          left: 0,
+          width: window.innerWidth,
+          height: window.innerHeight,
+        };
+      },
+    }); */
 
   })
 
