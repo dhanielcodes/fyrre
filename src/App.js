@@ -6,7 +6,7 @@ import { Header, Works, Experience, Contact, Authors } from "./views"
 import { useState, useRef, useEffect } from 'react'
 import gsap from 'gsap'
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
+import locomotiveScroll from 'locomotive-scroll'
 
 function App() {
 
@@ -17,6 +17,12 @@ function App() {
   let containerMain = useRef(null)
 
   useEffect(() => {
+    const scroll = new locomotiveScroll({
+      el: containerMain,
+      smooth: true
+    })
+
+    setTimeout(function(){ scroll.update(); }, 50);
 
   })
 
@@ -26,6 +32,7 @@ function App() {
   }, 3000)
 
   useEffect(() => {
+    
 
   })
   return (
@@ -39,26 +46,17 @@ function App() {
         ) :
 
         (
-          <LocomotiveScrollProvider options={
-            {
-              smooth: true,
-              lerp: 0.06,
-              tablet: {
-                breakpoint: 768,
-              },
-            }
-          }>
+          
             <div data-scroll-container  ref={el => containerMain = el} className="center_page" id='main'>
-                <Navbar data-scroll-section />
-                <div className='website'>
-                  <Header data-scroll-section />
-                  <Works data-scroll-section />
-                  <Experience data-scroll-section />
-                  <Authors data-scroll-section/>
-                </div>
-              <Contact data-scroll-section/>
+                  <Navbar />
+              <div className='website'>
+                  <Header />
+                  <Works />
+                  <Experience />
+                  <Authors />
               </div>
-          </LocomotiveScrollProvider>
+                  <Contact />
+              </div>
           )
       
       }

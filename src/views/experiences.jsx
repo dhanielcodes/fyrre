@@ -16,7 +16,7 @@ const Experience = () => {
         }
     ]
     return ( 
-        <main>
+        <main data-scroll-section>
             <div className="title">
                 PODCAST
             </div>

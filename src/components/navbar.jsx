@@ -1,6 +1,6 @@
 const Navbar = () => {
     return (
-        <nav>
+        <nav data-scroll-section>
             <div className="name">
                 FYRRE MAGAZINE
             </div>

@@ -32,6 +32,17 @@ nav .name {
     font-size: 20px;
 }
 
+header {}
+
+header::-webkit-scrollbar {
+    width: 0px;
+}
+
+header::-webkit-scrollbar-thumb {
+    width: 100%;
+    background: blue;
+}
+
 header .name {
     text-align: center;
     font-size: 18vw;
@@ -247,6 +258,8 @@ section form .form_button button {
 .section_more img {
     margin-left: 10px;
 }
+
+main {}
 
 main .title {
     font-size: 100px;

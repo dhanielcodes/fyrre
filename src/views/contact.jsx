@@ -1,7 +1,7 @@
 import { twitter, insta, wifi, youtube } from '../images/index'
 const Contact = () => {
     return ( 
-        <footer>
+        <footer data-scroll-section>
             <div className="main">
                 <div className='main_top'>
                     <div className="title">

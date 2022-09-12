@@ -42,7 +42,7 @@ const Work = () => {
     return ( 
 
 
-        <div>
+        <div data-scroll-section>
             <section>
                     <div className="works">
                         {

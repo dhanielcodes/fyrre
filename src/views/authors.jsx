@@ -29,7 +29,7 @@ const Authors = () => {
         }
     ]
     return ( 
-        <aside>
+        <aside data-scroll-section>
             <div className="author_top">
                 <div className="title">
                     AUTHORS

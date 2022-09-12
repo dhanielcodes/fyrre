@@ -2,8 +2,8 @@ import { banner } from "../images/index"
 
 const Header = () => {
     return ( 
-        <header>
-            <div className="name">
+        <header data-scroll-section>
+            <div className="name" data-scroll data-scroll-speed="-1">
                 ART & LIFE
             </div>
             <div className="news">
@@ -24,7 +24,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            <div className="banner">
+            <div className="banner" data-scroll data-scroll-speed="2">
                 <img className="banner_img" src={banner} alt="" />
             </div>
         </header> 
