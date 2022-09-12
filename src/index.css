@@ -34,16 +34,17 @@ nav .name {
 
 header {}
 
-header::-webkit-scrollbar {
+
+/* header::-webkit-scrollbar {
     width: 0px;
-}
+} */
 
 header::-webkit-scrollbar-thumb {
     width: 100%;
     background: blue;
 }
 
-header .name {
+.name_title {
     text-align: center;
     font-size: 18vw;
     font-weight: 600;
@@ -68,10 +69,44 @@ header .about_name {
     font-weight: 600;
 }
 
+header .about_content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 100%;
+}
+
 header .about_content_text1 {
     font-size: 20px;
     line-height: 40px;
     font-weight: 400;
+}
+
+header .about_content_main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+header .about_content_text2 {
+    display: flex;
+    font-weight: 600;
+}
+
+header .about_content_text2 div {
+    margin-right: 30px;
+}
+
+header .about_content_text2 span {
+    font-weight: 400;
+}
+
+header .about_content_text2_type {
+    border: 1px solid;
+    border-radius: 10000px;
+    padding: 10px 20px;
 }
 
 header .banner {
