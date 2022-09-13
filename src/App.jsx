@@ -72,7 +72,7 @@ function App() {
 
         (
           
-            <div className="center_page" id='main'>
+            <div data-scroll-container className="center_page" id='main'>
                   <Navbar />
                   <div className='website'>
                     <Routes>
