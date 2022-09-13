@@ -1,6 +1,8 @@
 import { banner } from "../images/index"
 import { HeaderTitle } from '../components/index'
 import { hope, hope2, devil, street, eyes, best, cover, arrow, pod1, pod2, pod3, jakob, jane, anna, anne, cris, jensen} from "../images/index"
+import '../styles/pages/home.css';
+import { Link, useNavigate } from "react-router-dom";
 
 
 
@@ -86,6 +88,13 @@ const Home = () => {
         }
     ]
 
+    let navigate = useNavigate()
+
+    const routerLink = (path) => {
+        navigate(path)
+
+        /* onClick={() => routerLink("/magazine")} */
+    }
 
     return ( 
         <div>
@@ -95,6 +104,9 @@ const Home = () => {
                 <HeaderTitle title="ART & LIFE" />
                 <div className="news">
                     NEWS TICKER+++
+                </div>
+                <div className="banner2">
+                    <img className="banner_img" src={banner} alt="" />
                 </div>
                 <div className="about">
                     <div className="about_name">
@@ -173,6 +185,11 @@ const Home = () => {
                                 })
                             }
                         </div>
+                        <div className="sections_more1">
+                            <div className="section_more">
+                                ALL ARTICLES <img src={arrow} alt="" />
+                            </div>
+                        </div>
                         <div className="other">
                             <div className="other_top">
                                 <div className="other_top_title">
@@ -212,9 +229,12 @@ const Home = () => {
                                 </div>
                             </form>
                         </div>
+                        
                 </section>
-                <div className="section_more">
-                    ALL ARTICLES <img src={arrow} alt="" />
+                <div className="sections_more2">
+                    <div className="section_more">
+                        ALL ARTICLES <img src={arrow} alt="" />
+                    </div>
                 </div>
 
             </div>
@@ -222,9 +242,14 @@ const Home = () => {
             {/* PODCAST SECTION */}
 
             <main data-scroll-section>
-                <div className="title">
-                    PODCAST
-                </div>
+                <div className="experience_top">
+                        <div className="title">
+                            PODCAST
+                        </div>
+                        <div className="experience_more">
+                            ALL PODCASTS <img src={arrow} alt="" />
+                        </div>
+                 </div>
                 <div className="experiences">
                     {pods.map((x) => {
                         return (

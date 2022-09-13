@@ -1,20 +1,27 @@
 import './App.css';
-import './index.css';
 import './loco.css';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import { Navbar, Contact } from "./components"
-import { Home } from "./pages"
+import { Authors, Home, Magazine, Podcasts } from "./pages"
 import { useState, useRef, useEffect } from 'react'
 import gsap from 'gsap'
 import ScrollTrigger from "gsap/ScrollTrigger";
 import locomotiveScroll from 'locomotive-scroll'
+import {loader} from './images/index'
 
 function App() {
 
-  const [preloader, setPreloader] = useState(false)
+  const [preloader, setPreloader] = useState(true)
+
+  const location = useLocation()
 
   gsap.registerPlugin(ScrollTrigger)
 
   let containerMain = useRef(null)
+
+  window.addEventListener("load", () => {
+    setPreloader(false)
+  })
 
   useEffect(() => {
     const scroll = new locomotiveScroll({
@@ -23,11 +30,12 @@ function App() {
       lerp: 0.1
     })
 
+    
     setTimeout(() => {
       scroll.update();
     }, 500);
 
-    scroll.on("scroll", ScrollTrigger.update);
+    //scroll.on("scroll", ScrollTrigger.update);
 
     /* ScrollTrigger.scrollerProxy(scroll.el, {
       scrollTop(value) {
@@ -46,34 +54,30 @@ function App() {
       },
     }); */
 
-  })
+  }, [location])
 
-
-  setTimeout(() => {
-    setPreloader(false)
-  }, 3000)
-
-  useEffect(() => {
-    
-
-  })
   return (
-    <div className="App">
+    <div className="App"  data-scroll-container  ref={el => containerMain = el} >
       {
         preloader ? 
         (
-          <div>
-            Loader
+          <div className='loader'>
+            <img src={loader} alt="" />
           </div>
         ) :
 
         (
           
-            <div data-scroll-container  ref={el => containerMain = el} className="center_page" id='main'>
+            <div className="center_page" id='main'>
                   <Navbar />
-              <div className='website'>
-                  <Home />
-              </div>
+                  <div className='website'>
+                    <Routes>
+                        <Route exact path="/" element={<Home/>} />
+                        <Route path="/magazine" element={<Magazine/>} />
+                        <Route path="/podcasts" element={<Podcasts/>} />
+                        <Route path="/authors" element={<Authors/>} />
+                    </Routes>
+                  </div>
                   <Contact />
               </div>
           )

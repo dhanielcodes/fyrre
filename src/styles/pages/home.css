@@ -12,8 +12,12 @@
     width: 0;
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
 body {
-    padding-top: 20px;
     overflow-x: hidden;
 }
 
@@ -28,8 +32,30 @@ nav .name {
     margin: auto;
     padding: 10px 0;
     border-bottom: 1px solid black;
-    font-weight: 700;
     font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav .logo {
+    font-weight: 700;
+}
+
+nav .nav_other {
+    display: flex;
+    font-weight: 500;
+}
+
+nav .nav_other div,
+nav img {
+    margin-left: 14px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+nav img {
+    width: 30px;
+    height: 20px;
 }
 
 header {}
@@ -46,7 +72,7 @@ header::-webkit-scrollbar-thumb {
 
 .name_title {
     text-align: center;
-    font-size: 18vw;
+    font-size: calc(100vw / 57 * 10);
     font-weight: 600;
 }
 
@@ -114,6 +140,15 @@ header .banner {
     position: relative;
 }
 
+header .banner2 {
+    display: none;
+    width: 100%;
+}
+
+header .banner2 img {
+    width: 100%;
+}
+
 header .banner img {
     width: 100%;
 }
@@ -153,9 +188,9 @@ section .work_desc_title {
 }
 
 section .work_desc_content {
-    font-size: 24px;
-    margin-top: 20px;
-    line-height: 45px;
+    font-size: 20px;
+    margin: 20px 0;
+    line-height: 40px;
 }
 
 section .work_img img {
@@ -290,6 +325,10 @@ section form .form_button button {
     font-size: 18px;
 }
 
+.sections_more1 {
+    display: none;
+}
+
 .section_more img {
     margin-left: 10px;
 }
@@ -352,20 +391,24 @@ aside .title {
     margin-bottom: 20px;
 }
 
-aside .author_top {
+aside .author_top,
+main .experience_top {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 20px;
 }
 
-aside .author_more {
+aside .author_more,
+main .experience_more {
     font-weight: 600;
     display: flex;
     align-items: center;
     font-size: 18px;
 }
 
-.author_more img {
+.author_more img,
+.experience_more img {
     margin-left: 10px;
 }
 
@@ -527,11 +570,40 @@ footer img {
     section .works {
         grid-row: 1;
     }
+    .sections_more1 {
+        display: block;
+    }
+    .sections_more2 {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 1280px) {
     header .about {
         grid-template-columns: repeat(1, 1fr);
+    }
+    header .about_content_text2,
+    header .about_content_main {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    header .banner {
+        display: none;
+    }
+    header .banner2 {
+        height: 400px;
+        display: block;
+        margin-top: 40px;
+    }
+    header .banner2 img {
+        height: 100%;
+        object-fit: cover;
+    }
+    header .about_content_text2 div {
+        margin-top: 20px;
+    }
+    header .about_content_text2_type {
+        margin-top: 20px;
     }
     main .experiences {
         display: grid;
@@ -554,7 +626,8 @@ footer img {
         margin-right: 0;
         margin-bottom: 10px;
     }
-    aside .author_top {
+    aside .author_top,
+    main .experience_top {
         flex-direction: column;
         align-items: flex-start;
     }
@@ -660,12 +733,25 @@ footer img {
 }
 
 @media screen and (max-width: 420px) {
+    .name_title {
+        font-size: 50px;
+    }
     main .experience {
         padding: 40px;
     }
+    footer form {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    footer form input {
+        margin-right: 0;
+    }
+    footer form .form_button {
+        width: 100%;
+    }
     footer .title {
         color: white;
-        font-size: 28px;
+        font-size: 36px;
         font-weight: 500;
         text-transform: uppercase;
     }

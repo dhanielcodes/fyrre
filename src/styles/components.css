@@ -1,0 +1,57 @@
+.art {
+    padding: 50px;
+    border: 1px solid;
+}
+
+.art_img {
+    width: 100%;
+}
+
+.art_desc {
+    margin-top: 20px;
+}
+
+.art_desc_content {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 30px;
+}
+
+.art_desc_title {
+    font-size: 34px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.art_desc_about_dets:first-child {
+    margin-top: 0;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+.art_desc_about_dets {
+    display: flex;
+    font-weight: 600;
+    margin-top: 40px;
+}
+
+.art_desc_about_dets:last-child div {
+    margin-right: 30px;
+}
+
+.art_desc_about_dets span {
+    font-weight: 400;
+}
+
+.art_desc_about_type {
+    border: 1px solid;
+    border-radius: 10000px;
+    font-size: 10px;
+    padding: 6px 10px;
+}
+
+@media screen and (max-width: 420px) {
+    .art {
+        padding: 30px;
+    }
+}

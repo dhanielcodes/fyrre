@@ -13,6 +13,7 @@
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-locomotive-scroll": "^0.2.2",
+        "react-router-dom": "^6.3.0",
         "react-scripts": "5.0.1",
         "resize-observer-polyfill": "^1.5.1",
         "smooth-scrollbar": "^8.7.5",
