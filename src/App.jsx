@@ -57,7 +57,7 @@ function App() {
   }, [location])
 
   return (
-    <div className="App"  data-scroll-container  ref={el => containerMain = el} >
+    <div className="App"   >
       {
         preloader ? 
         (
@@ -68,11 +68,10 @@ function App() {
             </svg>
 
           </div>
-        ) :
+        ) : null
+      }
 
-        (
-          
-            <div data-scroll-container className="center_page" id='main'>
+              <div data-scroll-container ref={el => containerMain = el} className="center_page" id='main'>
                   <Navbar />
                   <div className='website'>
                     <Routes>
@@ -84,9 +83,6 @@ function App() {
                   </div>
                   <Contact />
               </div>
-          )
-      
-      }
       
 
     </div>
