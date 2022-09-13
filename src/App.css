@@ -20,7 +20,7 @@
     place-items: center;
 }
 
-.loader img {
+.loader svg {
     animation: roate 4s linear infinite forwards;
 }
 
