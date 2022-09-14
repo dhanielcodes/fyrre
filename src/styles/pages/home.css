@@ -19,6 +19,7 @@ a {
 
 body {
     overflow-x: hidden;
+    overscroll-behavior-y: none;
 }
 
 .website {

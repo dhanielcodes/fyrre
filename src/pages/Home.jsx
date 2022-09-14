@@ -2,11 +2,16 @@ import { banner } from "../images/index"
 import { HeaderTitle } from '../components/index'
 import { hope, hope2, devil, street, eyes, best, cover, arrow, pod1, pod2, pod3, jakob, jane, anna, anne, cris, jensen} from "../images/index"
 import '../styles/pages/home.css';
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { useRef } from "react";
 
 
 
 const Home = () => {
+    gsap.registerPlugin(ScrollTrigger)
+    
     const work = [
         {
             title: "Hope dies last",
@@ -96,13 +101,23 @@ const Home = () => {
         /* onClick={() => routerLink("/magazine")} */
     }
 
+    const tl = gsap.timeline()
+
+    let header = useRef(null)
+
+    tl.from(header, {
+      duration: 2,
+      ease: "expo",
+      opacity: 0
+    })
+
     return ( 
         <div>
 
             {/* HEADER SECTION */}
             <header data-scroll-section>
-                <HeaderTitle title="ART & LIFE" />
-                <div className="news">
+                <HeaderTitle  title="ART & LIFE" />
+                <div className="news" ref={el => header = el}>
                     NEWS TICKER+++
                 </div>
                 <div className="banner2">
