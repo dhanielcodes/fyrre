@@ -5,8 +5,7 @@ import '../styles/pages/home.css';
 import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { useRef } from "react";
-import { motion } from "framer-motion"
+import { useEffect, useRef } from "react";
 
 
 
@@ -98,45 +97,136 @@ const Home = () => {
 
     const routerLink = (path) => {
         navigate(path)
-
         /* onClick={() => routerLink("/magazine")} */
     }
 
-    const tl = gsap.timeline()
-
     let header = useRef(null)
+    let news = useRef(null)
+    let headerAbout = useRef(null)
+    let headerAbout2 = useRef(null)
+    let headerAbout3 = useRef(null)
+    let bannerImg = useRef(null)
 
-    tl.from(header, {
-      duration: 2,
-      ease: "expo",
-      opacity: 0
+    useEffect(() => {
+        gsap.from(header, {
+            duration: 1.3,
+            translateY: "100%",
+            ease: "expo",
+        })
+        gsap.to(header, {
+            translateY: "0%",
+            ease: "expo",
+            duration: 1.3
+        })
+
+
+        gsap.from(news, {
+            opacity: 0,
+            ease: "expo",
+            duration: 1.3,
+            delay: .4
+
+        })
+        gsap.to(news, {
+            opacity: 1,
+            ease: "expo",
+            duration: 1.3,
+            delay: .4
+        })
+
+
+        gsap.from(headerAbout, {
+            translateY: "-100%",
+            ease: "expo",
+            duration: 1,
+            delay: .4
+
+        })
+        gsap.to(headerAbout, {
+            translateY: "0%",
+            ease: "expo",
+            duration: 1,
+            delay: .4
+        })
+
+
+        gsap.from(headerAbout2, {
+            translateY: "-100%",
+            ease: "expo",
+            duration: 1,
+            delay: .4
+
+        })
+        gsap.to(headerAbout2, {
+            translateY: "-0%",
+            ease: "expo",
+            duration: 1,
+            delay: .4
+        })
+
+        gsap.from(headerAbout3, {
+            opacity: 0,
+            ease: "expo",
+            duration: 1,
+            delay: .4
+
+        })
+        gsap.to(headerAbout3, {
+            opacity: 1,
+            ease: "expo",
+            duration: 1.3,
+            delay: .4
+        })
+
+        gsap.from(bannerImg, {
+            translateY: "-100%",
+            ease: "expo",
+            duration: 1.3,
+            delay: .4
+        })
+        gsap.to(bannerImg, {
+            translateY: "0%",
+            ease: "expo",
+            duration: 1.3,
+            delay: .4,
+            scrollTrigger:{
+                trigger: bannerImg,
+                start: "top top"
+            }
+        })
     })
 
     return ( 
         <div>
 
             {/* HEADER SECTION */}
-            <header data-scroll-section>
-                <motion.div initial={{opacity: 0}} animate={{opacity: 1}}>
-                    <HeaderTitle  title="ART & LIFE" />
-                </motion.div>
-                <motion.div className="news" ref={el => header = el}>
+            <header>
+                <div className="split">
+                    <div ref={el => header = el}>
+                        <HeaderTitle title="ART & LIFE" />
+                    </div>
+                </div>
+                <div ref={el => news = el} className="news">
                     NEWS TICKER+++
-                </motion.div>
+                </div>
                 <div className="banner2">
                     <img className="banner_img" src={banner} alt="" />
                 </div>
                 <div className="about">
-                    <div className="about_name">
-                        DON'T CLOSE YOUR EYES
+                    <div className="split">
+                        <div className="about_name" ref={el => headerAbout = el}>
+                            DON'T CLOSE YOUR EYES
+                        </div>
                     </div>
                     <div className="about_content">
-                        <div className="about_content_text1">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-                            ut labore et dolore magna aliqua. Egestas dui id ornare arcu odio ut sem. Cras ornare
-                            arcu dui vivamus arcu felis bibendum ut. Porttitor leo a diam.
+                        <div className="split">
+                            <div ref={el => headerAbout2 = el} className="about_content_text1">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                                ut labore et dolore magna aliqua. Egestas dui id ornare arcu odio ut sem. Cras ornare
+                                arcu dui vivamus arcu felis bibendum ut. Porttitor leo a diam.
+                            </div>
                         </div>
-                        <div className="about_content_main">
+                        <div className="about_content_main" ref={el => headerAbout3 = el}>
                             <div className="about_content_text2">
                                 <div>
                                     Text <span>Jakob Gronberg</span>
@@ -154,14 +244,16 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className="banner" data-scroll data-scroll-speed="2">
-                    <img className="banner_img" src={banner} alt="" />
+                <div className="split">
+                    <div className="banner" ref={el => bannerImg = el}>
+                        <img className="banner_img" src={banner} alt="" />
+                    </div>
                 </div>
             </header> 
 
             {/* WORKs SECTION */}
 
-            <div data-scroll-section>
+            <div>
                 <section>
                         <div className="works">
                             {
@@ -259,7 +351,7 @@ const Home = () => {
 
             {/* PODCAST SECTION */}
 
-            <main data-scroll-section>
+            <main>
                 <div className="experience_top">
                         <div className="title">
                             PODCAST
@@ -295,7 +387,7 @@ const Home = () => {
 
             {/* AUTHORS SECTION */}
 
-            <aside data-scroll-section>
+            <aside>
                 <div className="author_top">
                     <div className="title">
                         AUTHORS

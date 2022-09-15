@@ -4,7 +4,6 @@ import { HeaderTitle, Art } from '../components'
 import { jakob, jensen, anne} from "../images/index"
 import gsap from 'gsap'
 import ScrollTrigger from "gsap/ScrollTrigger";
-import locomotiveScroll from 'locomotive-scroll'
 
 const Authors = () => {
     
@@ -27,17 +26,10 @@ const Authors = () => {
     useEffect(() => {
 
 
-        const scroll = new locomotiveScroll()
-        setTimeout(() => {
-            scroll.update();
-        }, 500);
-      
-        //scroll.on("scroll", ScrollTrigger.update);
-
     }, [])
 
     return ( 
-        <div data-scroll-section>
+        <div>
             <HeaderTitle title="AUTHORS" />
 
             <div className="authors_list">

@@ -4,7 +4,6 @@ import { eyes2, hope, best, devil, eyes, street} from "../images/index"
 import '../styles/pages/magazine.css'
 import gsap from 'gsap'
 import ScrollTrigger from "gsap/ScrollTrigger";
-import locomotiveScroll from 'locomotive-scroll'
 
 const Magazine = () => {
 
@@ -51,15 +50,9 @@ const Magazine = () => {
 
     useEffect(() => {
 
-        const scroll = new locomotiveScroll()
-        setTimeout(() => {
-            scroll.update();
-        }, 500);
-      
-        //scroll.on("scroll", ScrollTrigger.update);
     })
     return ( 
-        <div data-scroll-section>
+        <div>
             <div>
                 <HeaderTitle title="MAGAZINE"/>
                 <div className='magazine_top'>

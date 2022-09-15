@@ -4,7 +4,6 @@ import { HeaderTitle, Art } from '../components'
 import { pod1, pod2, pod3} from "../images/index"
 import gsap from 'gsap'
 import ScrollTrigger from "gsap/ScrollTrigger";
-import locomotiveScroll from 'locomotive-scroll'
 
 const Podcasts = () => {
     gsap.registerPlugin(ScrollTrigger)
@@ -27,17 +26,9 @@ const Podcasts = () => {
     ]
     useEffect(() => {
 
-
-        const scroll = new locomotiveScroll()
-        setTimeout(() => {
-            scroll.update();
-        }, 500);
-      
-        //scroll.on("scroll", ScrollTrigger.update);
-
     }, [])
     return ( 
-        <div className="podcasts" data-scroll-section>
+        <div className="podcasts">
             <HeaderTitle title="PODCASTS"/>
             <div className="podcast_list">
                 {pods.reverse().map((x) => {

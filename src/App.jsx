@@ -6,36 +6,16 @@ import { Authors, Home, Magazine, Podcasts } from "./pages"
 import { useState, useRef, useEffect } from 'react'
 import {gsap} from 'gsap'
 import ScrollTrigger from "gsap/ScrollTrigger";
-import locomotiveScroll from 'locomotive-scroll'
-import {loader} from './images/index'
-import { motion, useScroll } from "framer-motion"
 
 function App() {
   const location = useLocation()
-  const { scrollYProgress } = useScroll();
   gsap.registerPlugin(ScrollTrigger)
 
   let containerMain = useRef(null)
 
-  /* window.addEventListener("load", () => {
-    setPreloader(false)
-  }) */
 
   useEffect(() => {
-    const scroll = new locomotiveScroll({
-      el: containerMain,
-      smooth: true,
-      lerp: 0.1
-    })
-
     
-    setTimeout(() => {
-      scroll.update();
-    }, 500);
-
-    scroll.on("scroll", ScrollTrigger.update);
-
-
   }, [location])
 
   useEffect(() => {
@@ -44,7 +24,7 @@ function App() {
 
   return (
     <div className="App"   >
-              <div data-scroll-container ref={el => containerMain = el} className="center_page" id='main'>
+              <div ref={el => containerMain = el} className="center_page" id='main'>
 
                   <Navbar />
                   <div className='website'>
