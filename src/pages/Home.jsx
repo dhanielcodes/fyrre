@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useRef } from "react";
+import { motion } from "framer-motion"
 
 
 
@@ -116,10 +117,12 @@ const Home = () => {
 
             {/* HEADER SECTION */}
             <header data-scroll-section>
-                <HeaderTitle  title="ART & LIFE" />
-                <div className="news" ref={el => header = el}>
+                <motion.div initial={{opacity: 0}} animate={{opacity: 1}}>
+                    <HeaderTitle  title="ART & LIFE" />
+                </motion.div>
+                <motion.div className="news" ref={el => header = el}>
                     NEWS TICKER+++
-                </div>
+                </motion.div>
                 <div className="banner2">
                     <img className="banner_img" src={banner} alt="" />
                 </div>

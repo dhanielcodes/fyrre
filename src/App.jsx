@@ -8,10 +8,11 @@ import {gsap} from 'gsap'
 import ScrollTrigger from "gsap/ScrollTrigger";
 import locomotiveScroll from 'locomotive-scroll'
 import {loader} from './images/index'
+import { motion, useScroll } from "framer-motion"
 
 function App() {
   const location = useLocation()
-
+  const { scrollYProgress } = useScroll();
   gsap.registerPlugin(ScrollTrigger)
 
   let containerMain = useRef(null)
@@ -44,6 +45,7 @@ function App() {
   return (
     <div className="App"   >
               <div data-scroll-container ref={el => containerMain = el} className="center_page" id='main'>
+
                   <Navbar />
                   <div className='website'>
                     <Routes>
