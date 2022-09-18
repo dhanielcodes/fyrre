@@ -674,6 +674,9 @@ footer img {
     .website {
         width: 90%;
     }
+    nav .name {
+        width: 90%;
+    }
     section .work_desc_content {
         font-size: 20px;
     }
