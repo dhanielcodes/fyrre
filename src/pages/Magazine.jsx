@@ -1,13 +1,28 @@
-import { useEffect } from 'react';
 import { HeaderTitle, Art } from '../components'
 import { eyes2, hope, best, devil, eyes, street} from "../images/index"
 import '../styles/pages/magazine.css'
 import gsap from 'gsap'
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { useRef, useEffect } from 'react';
 
 const Magazine = () => {
 
   gsap.registerPlugin(ScrollTrigger)
+
+  let header = useRef(null)
+
+  useEffect(() => {
+    gsap.from(header, {
+        duration: 1.3,
+        translateY: "100%",
+        ease: "expo",
+    })
+    gsap.to(header, {
+        translateY: "0%",
+        ease: "expo",
+        duration: 1.3
+    })
+  })
 
   const pods = [
     {
@@ -54,7 +69,11 @@ const Magazine = () => {
     return ( 
         <div>
             <div>
-                <HeaderTitle title="MAGAZINE"/>
+                <div className='split'>
+                    <div  ref={el => header = el}>
+                        <HeaderTitle title="MAGAZINE"/>
+                    </div>
+                </div>
                 <div className='magazine_top'>
                     <div>
                         Categories

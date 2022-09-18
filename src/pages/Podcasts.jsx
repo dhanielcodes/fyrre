@@ -4,6 +4,7 @@ import { HeaderTitle, Art } from '../components'
 import { pod1, pod2, pod3} from "../images/index"
 import gsap from 'gsap'
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { useRef } from "react";
 
 const Podcasts = () => {
     gsap.registerPlugin(ScrollTrigger)
@@ -24,12 +25,27 @@ const Podcasts = () => {
             number: "03"
         },
     ]
-    useEffect(() => {
+    let header = useRef(null)
 
-    }, [])
+    useEffect(() => {
+        gsap.from(header, {
+            duration: 1.3,
+            translateY: "100%",
+            ease: "expo",
+        })
+        gsap.to(header, {
+            translateY: "0%",
+            ease: "expo",
+            duration: 1.3
+        })
+    })
     return ( 
         <div className="podcasts">
-            <HeaderTitle title="PODCASTS"/>
+            <div className='split'>
+                    <div  ref={el => header = el}>
+                        <HeaderTitle title="PODCAST"/>
+                    </div>
+                </div>
             <div className="podcast_list">
                 {pods.reverse().map((x) => {
                     return (

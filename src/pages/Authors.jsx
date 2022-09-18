@@ -4,6 +4,7 @@ import { HeaderTitle, Art } from '../components'
 import { jakob, jensen, anne} from "../images/index"
 import gsap from 'gsap'
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { useRef } from "react";
 
 const Authors = () => {
     
@@ -23,14 +24,28 @@ const Authors = () => {
             img: anne,
         },
     ]
+    let header = useRef(null)
+
     useEffect(() => {
-
-
-    }, [])
+        gsap.from(header, {
+            duration: 1.3,
+            translateY: "100%",
+            ease: "expo",
+        })
+        gsap.to(header, {
+            translateY: "0%",
+            ease: "expo",
+            duration: 1.3
+        })
+    })
 
     return ( 
         <div>
-            <HeaderTitle title="AUTHORS" />
+            <div className='split'>
+                    <div  ref={el => header = el}>
+                        <HeaderTitle title="AUHTORS"/>
+                    </div>
+                </div>
 
             <div className="authors_list">
             {

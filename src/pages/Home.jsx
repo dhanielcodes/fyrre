@@ -97,7 +97,7 @@ const Home = () => {
 
     const routerLink = (path) => {
         navigate(path)
-        /* onClick={() => routerLink("/magazine")} */
+        window.scrollTo(0, 0)
     }
 
     let header = useRef(null)
@@ -106,6 +106,8 @@ const Home = () => {
     let headerAbout2 = useRef(null)
     let headerAbout3 = useRef(null)
     let bannerImg = useRef(null)
+    let section = useRef(null)
+    let magPanel = useRef(null)
 
     useEffect(() => {
         gsap.from(header, {
@@ -124,14 +126,14 @@ const Home = () => {
             opacity: 0,
             ease: "expo",
             duration: 1.3,
-            delay: .4
+            delay: .8
 
         })
         gsap.to(news, {
             opacity: 1,
             ease: "expo",
             duration: 1.3,
-            delay: .4
+            delay: .8
         })
 
 
@@ -139,14 +141,14 @@ const Home = () => {
             translateY: "-100%",
             ease: "expo",
             duration: 1,
-            delay: .4
+            delay: .8
 
         })
         gsap.to(headerAbout, {
             translateY: "0%",
             ease: "expo",
             duration: 1,
-            delay: .4
+            delay: .8
         })
 
 
@@ -154,47 +156,50 @@ const Home = () => {
             translateY: "-100%",
             ease: "expo",
             duration: 1,
-            delay: .4
+            delay: .8
 
         })
         gsap.to(headerAbout2, {
             translateY: "-0%",
             ease: "expo",
             duration: 1,
-            delay: .4
+            delay: .8
         })
 
         gsap.from(headerAbout3, {
             opacity: 0,
             ease: "expo",
             duration: 1,
-            delay: .4
+            delay: .8
 
         })
         gsap.to(headerAbout3, {
             opacity: 1,
             ease: "expo",
             duration: 1.3,
-            delay: .4
+            delay: .8
         })
 
         gsap.from(bannerImg, {
-            translateY: "-100%",
+            opacity: 0,
             ease: "expo",
             duration: 1.3,
-            delay: .4
+            delay: .8,
+            scrub: 1,
         })
         gsap.to(bannerImg, {
-            translateY: "0%",
+            opacity: 1,
             ease: "expo",
             duration: 1.3,
-            delay: .4,
-            scrollTrigger:{
-                trigger: bannerImg,
-                start: "top top"
-            }
+            delay: .8,
+            scrub: 1,
         })
+
+        
+
     })
+
+    
 
     return ( 
         <div>
@@ -254,7 +259,7 @@ const Home = () => {
             {/* WORKs SECTION */}
 
             <div>
-                <section>
+                <section ref={el => section = el}>
                         <div className="works">
                             {
                                 work.map((x) => {
@@ -296,11 +301,11 @@ const Home = () => {
                             }
                         </div>
                         <div className="sections_more1">
-                            <div className="section_more">
+                            <div className="section_more" onClick={() => routerLink("/magazine")}>
                                 ALL ARTICLES <img src={arrow} alt="" />
                             </div>
                         </div>
-                        <div className="other">
+                        <div ref={el => magPanel = el} className="other">
                             <div className="other_top">
                                 <div className="other_top_title">
                                     PRINTMAGAZINE
@@ -342,7 +347,7 @@ const Home = () => {
                         
                 </section>
                 <div className="sections_more2">
-                    <div className="section_more">
+                    <div className="section_more" onClick={() => routerLink("/magazine")}>
                         ALL ARTICLES <img src={arrow} alt="" />
                     </div>
                 </div>
@@ -356,7 +361,7 @@ const Home = () => {
                         <div className="title">
                             PODCAST
                         </div>
-                        <div className="experience_more">
+                        <div className="experience_more" onClick={() => routerLink("/podcasts")}>
                             ALL PODCASTS <img src={arrow} alt="" />
                         </div>
                  </div>
@@ -392,7 +397,7 @@ const Home = () => {
                     <div className="title">
                         AUTHORS
                     </div>
-                    <div className="author_more">
+                    <div className="author_more" onClick={() => routerLink("/authors")}>
                         ALL AUTHORS <img src={arrow} alt="" />
                     </div>
                 </div>
