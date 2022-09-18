@@ -757,6 +757,15 @@ footer img {
 }
 
 @media screen and (max-width: 420px) {
+    nav .name {
+        flex-direction: column;
+    }
+    nav .logo {
+        margin-bottom: 20px;
+    }
+    nav .nav_other div {
+        margin-left: 0;
+    }
     .name_title {
         font-size: 50px;
     }
