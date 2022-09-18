@@ -735,6 +735,11 @@ footer img {
 }
 
 @media screen and (max-width: 640px) {
+    nav .name {
+        width: 100%;
+        padding: 20px;
+        padding-top: 19px;
+    }
     header .about_name {
         font-size: 40px;
     }
