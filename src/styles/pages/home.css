@@ -671,6 +671,10 @@ footer img {
 }
 
 @media screen and (max-width: 1024px) {
+    nav a,
+    nav img {
+        display: none;
+    }
     .website {
         width: 90%;
     }
