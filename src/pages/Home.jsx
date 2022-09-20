@@ -195,6 +195,13 @@ const Home = () => {
             scrub: 1,
         })
 
+
+       /*  ScrollTrigger.create({
+            trigger: section,
+            pin: magPanel,
+            start: "top top"
+        }) */
+
         
 
     })
