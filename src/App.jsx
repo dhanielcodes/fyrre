@@ -33,6 +33,7 @@ function App() {
                         <Route path="/magazine" element={<Magazine/>} />
                         <Route path="/podcasts" element={<Podcasts/>} />
                         <Route path="/authors" element={<Authors/>} />
+                        <Route path="*" element={<Home/>} />
                     </Routes>
                   </div>
                   <Contact />
