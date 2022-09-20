@@ -113,97 +113,99 @@ const Home = ({routerLink}) => {
     let magPanel = useRef(null)
 
     useEffect(() => {
-        gsap.from(header, {
-            duration: 1.3,
-            translateY: "100%",
-            ease: "expo",
+        window.addEventListener("load", () => {
+            gsap.from(header, {
+                duration: 1.3,
+                translateY: "100%",
+                ease: "expo",
+            })
+            gsap.to(header, {
+                translateY: "0%",
+                ease: "expo",
+                duration: 1.3
+            })
+    
+    
+            gsap.from(news, {
+                opacity: 0,
+                ease: "expo",
+                duration: 1.3,
+                delay: .8
+    
+            })
+            gsap.to(news, {
+                opacity: 1,
+                ease: "expo",
+                duration: 1.3,
+                delay: .8
+            })
+    
+    
+            gsap.from(headerAbout, {
+                translateY: "-100%",
+                ease: "expo",
+                duration: 1,
+                delay: .8
+    
+            })
+            gsap.to(headerAbout, {
+                translateY: "0%",
+                ease: "expo",
+                duration: 1,
+                delay: .8
+            })
+    
+    
+            gsap.from(headerAbout2, {
+                translateY: "-100%",
+                ease: "expo",
+                duration: 1,
+                delay: .8
+    
+            })
+            gsap.to(headerAbout2, {
+                translateY: "-0%",
+                ease: "expo",
+                duration: 1,
+                delay: .8
+            })
+    
+            gsap.from(headerAbout3, {
+                opacity: 0,
+                ease: "expo",
+                duration: 1,
+                delay: .8
+    
+            })
+            gsap.to(headerAbout3, {
+                opacity: 1,
+                ease: "expo",
+                duration: 1.3,
+                delay: .8
+            })
+    
+            gsap.from(bannerImg, {
+                opacity: 0,
+                ease: "expo",
+                duration: 1.3,
+                delay: .8,
+                scrub: 1,
+            })
+            gsap.to(bannerImg, {
+                opacity: 1,
+                ease: "expo",
+                duration: 1.3,
+                delay: .8,
+                scrub: 1,
+            })
+    
+    
+           /*  ScrollTrigger.create({
+                trigger: section,
+                pin: magPanel,
+                start: "top top"
+            }) */
         })
-        gsap.to(header, {
-            translateY: "0%",
-            ease: "expo",
-            duration: 1.3
-        })
-
-
-        gsap.from(news, {
-            opacity: 0,
-            ease: "expo",
-            duration: 1.3,
-            delay: .8
-
-        })
-        gsap.to(news, {
-            opacity: 1,
-            ease: "expo",
-            duration: 1.3,
-            delay: .8
-        })
-
-
-        gsap.from(headerAbout, {
-            translateY: "-100%",
-            ease: "expo",
-            duration: 1,
-            delay: .8
-
-        })
-        gsap.to(headerAbout, {
-            translateY: "0%",
-            ease: "expo",
-            duration: 1,
-            delay: .8
-        })
-
-
-        gsap.from(headerAbout2, {
-            translateY: "-100%",
-            ease: "expo",
-            duration: 1,
-            delay: .8
-
-        })
-        gsap.to(headerAbout2, {
-            translateY: "-0%",
-            ease: "expo",
-            duration: 1,
-            delay: .8
-        })
-
-        gsap.from(headerAbout3, {
-            opacity: 0,
-            ease: "expo",
-            duration: 1,
-            delay: .8
-
-        })
-        gsap.to(headerAbout3, {
-            opacity: 1,
-            ease: "expo",
-            duration: 1.3,
-            delay: .8
-        })
-
-        gsap.from(bannerImg, {
-            opacity: 0,
-            ease: "expo",
-            duration: 1.3,
-            delay: .8,
-            scrub: 1,
-        })
-        gsap.to(bannerImg, {
-            opacity: 1,
-            ease: "expo",
-            duration: 1.3,
-            delay: .8,
-            scrub: 1,
-        })
-
-
-       /*  ScrollTrigger.create({
-            trigger: section,
-            pin: magPanel,
-            start: "top top"
-        }) */
 
         
 
