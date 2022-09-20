@@ -9,7 +9,7 @@ import { useEffect, useRef } from "react";
 
 
 
-const Home = () => {
+const Home = ({routerLink}) => {
     gsap.registerPlugin(ScrollTrigger)
     
     const work = [
@@ -93,12 +93,16 @@ const Home = () => {
         }
     ]
 
-    let navigate = useNavigate()
+    //let navigate = useNavigate()
 
-    const routerLink = (path) => {
-        navigate(path)
-        window.scrollTo(0, 0)
-    }
+    /* const routerLink = (path) => {
+        gsap.from(window, {opacity: 0})
+        setTimeout(() => {
+            gsap.to(window, {opacity: 1})
+            navigate(path)
+            window.scrollTo(0, 0)
+        }, 2000)
+    } */
 
     let header = useRef(null)
     let news = useRef(null)

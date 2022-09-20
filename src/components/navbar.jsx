@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { insta2, twitter2, youtube2, wifi2, line} from "../images/index"
 
-const Navbar = () => {
+const Navbar = ({routerLink}) => {
 
     const location = useLocation()
 
@@ -18,12 +18,6 @@ const Navbar = () => {
         }
     }, [location.pathname]);
 
-    const navigate = useNavigate()
-
-    const routerLink = (path) => {
-        navigate(path)
-        window.scrollTo(0, 0)
-    }
     return (
         <nav data-scroll-section>
             <div className="name">

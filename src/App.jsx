@@ -1,9 +1,9 @@
 import './App.css';
 import './loco.css';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { Navbar, Contact } from "./components"
 import { Authors, Home, Magazine, Podcasts } from "./pages"
-import { useState, useRef, useEffect } from 'react'
+import { /* useState */ useRef, useEffect } from 'react'
 import {gsap} from 'gsap'
 import ScrollTrigger from "gsap/ScrollTrigger";
 
@@ -21,15 +21,27 @@ function App() {
   useEffect(() => {
    
   })
+  const navigate = useNavigate()
+
+  const routerLink = (path) => {
+    gsap.to(containerMain, {opacity: 0, duration: .6})
+    setTimeout(() => {
+      navigate(path)
+      window.scrollTo(0, 0)
+      gsap.to(containerMain, {opacity: 1, duration: .6, delay: .2})
+    }, 2000)
+  
+  }
+  
 
   return (
-    <div className="App"   >
+    <div className="App">
               <div ref={el => containerMain = el} className="center_page" id='main'>
 
-                  <Navbar />
+                  <Navbar routerLink={routerLink} />
                   <div className='website'>
                     <Routes>
-                        <Route exact path="/" element={<Home/>} />
+                        <Route exact path="/" element={<Home routerLink={routerLink}/>} />
                         <Route path="/magazine" element={<Magazine/>} />
                         <Route path="/podcasts" element={<Podcasts/>} />
                         <Route path="/authors" element={<Authors/>} />
@@ -45,3 +57,5 @@ function App() {
 }
 
 export default App;
+
+
