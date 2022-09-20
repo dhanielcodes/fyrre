@@ -24,12 +24,14 @@ function App() {
   const navigate = useNavigate()
 
   const routerLink = (path) => {
-    gsap.to(containerMain, {opacity: 0, duration: .6})
-    setTimeout(() => {
-      navigate(path)
-      window.scrollTo(0, 0)
-      gsap.to(containerMain, {opacity: 1, duration: .6, delay: .2})
-    }, 2000)
+    if (location.pathname !== path){
+      gsap.to(containerMain, {opacity: 0, duration: .6})
+      setTimeout(() => {
+        navigate(path)
+        window.scrollTo(0, 0)
+        gsap.to(containerMain, {opacity: 1, duration: .6, delay: .2})
+      }, 2000)
+    }
   
   }
   

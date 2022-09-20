@@ -2,7 +2,6 @@ import { banner } from "../images/index"
 import { HeaderTitle } from '../components/index'
 import { hope, hope2, devil, street, eyes, best, cover, arrow, pod1, pod2, pod3, jakob, jane, anna, anne, cris, jensen} from "../images/index"
 import '../styles/pages/home.css';
-import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
@@ -209,6 +208,13 @@ const Home = ({routerLink}) => {
         
 
     })
+
+    const para = document.querySelector(".banner")
+    window.addEventListener("scroll", () => {
+        let val = window.scrollY;
+  
+        para.style.bottom = val * -0.2 + "px";
+      });
 
     
 
