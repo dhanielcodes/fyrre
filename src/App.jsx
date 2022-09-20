@@ -22,7 +22,8 @@ function App() {
       setLoader(false)
       gsap.to(loader2, {
         translateY: "100%",
-        duration: 1
+        duration: 2,
+        ease: "expo"
       })
     })
   })
