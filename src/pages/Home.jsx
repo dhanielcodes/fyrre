@@ -202,7 +202,7 @@ const Home = ({routerLink}) => {
     
            /*  ScrollTrigger.create({
                 trigger: section,
-                pin: magPanel,
+                pin: magPaneil,
                 start: "top top"
             }) */
         })

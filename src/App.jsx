@@ -33,10 +33,20 @@ function App() {
   const routerLink = (path) => {
     if (location.pathname !== path){
       gsap.to(containerMain, {opacity: 0, duration: .6})
+      gsap.to(loader2, {
+        translateY: "0%",
+        duration: 1.4,
+        ease: "expo"
+      })
       setTimeout(() => {
         navigate(path)
         window.scrollTo(0, 0)
         gsap.to(containerMain, {opacity: 1, duration: .6, delay: .2})
+        gsap.to(loader2, {
+          translateY: "100%",
+          duration: 1.4,
+          ease: "expo"
+        })
       }, 2000)
     }
   
