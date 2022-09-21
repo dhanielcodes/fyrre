@@ -5,11 +5,19 @@
 }
 
 body {
-    background-color: wheat;
+    background-color: white;
 }
 
 .App {
     padding-top: 20px;
+}
+
+.loader:first-child {
+    z-index: 120;
+}
+
+.loader h1 {
+    font-size: 15vw;
 }
 
 .loader {

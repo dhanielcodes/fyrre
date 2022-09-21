@@ -25,6 +25,8 @@ const Authors = () => {
         },
     ]
     let header = useRef(null)
+    let mag = useRef(null)
+
 
     useEffect(() => {
         gsap.from(header, {
@@ -37,7 +39,23 @@ const Authors = () => {
             ease: "expo",
             duration: 1.3
         })
+
+        gsap.from(mag, {
+            opacity: 0,
+            translateY: "10%",
+            duration: 1.4,
+            ease: "expo",
+            delay: .7
+        })
+        gsap.to(mag, {
+            opacity: 1,
+            translateY: "0%",
+            ease: "expo",
+            duration: 1.4,
+            delay: .7
+        })
     })
+
 
     return ( 
         <div>
@@ -47,7 +65,7 @@ const Authors = () => {
                     </div>
                 </div>
 
-            <div className="authors_list">
+            <div className="authors_list" ref={el => mag = el}>
             {
                 authors.map((x) => {
                     return (

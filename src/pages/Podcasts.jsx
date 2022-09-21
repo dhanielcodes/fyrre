@@ -5,6 +5,7 @@ import { pod1, pod2, pod3} from "../images/index"
 import gsap from 'gsap'
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useRef } from "react";
+import { motion } from "framer-motion"
 
 const Podcasts = () => {
     gsap.registerPlugin(ScrollTrigger)
@@ -39,6 +40,17 @@ const Podcasts = () => {
             duration: 1.3
         })
     })
+    const workVariants = {
+        offscreen: {
+            y: "10%",
+            opacity: 0
+        },
+        onscreen:{
+            y: "0%",
+            opacity: 1,
+            transition: {type: "spring", duration: 1, bounce: 0.3}
+        }
+    }
     return ( 
         <div className="podcasts">
             <div className='split'>
@@ -49,28 +61,30 @@ const Podcasts = () => {
             <div className="podcast_list">
                 {pods.reverse().map((x) => {
                     return (
-                        <div className="podcast">
-                            <div className="podcast_number">{x.number}</div>
-                            <div className="podcast_cont">    
-                                <div className="podcast_main">
-                                    <img className="podcast_img" src={x.img} alt="" />
-                                    <div className="podcast_title">
-                                        {x.title}
+                        <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.4   }}>
+                            <motion.div className="podcast" variants={workVariants}>
+                                <div className="podcast_number">{x.number}</div>
+                                <div className="podcast_cont">    
+                                    <div className="podcast_main">
+                                        <img className="podcast_img" src={x.img} alt="" />
+                                        <div className="podcast_title">
+                                            {x.title}
+                                        </div>
+                                    </div>
+                                    <div className="podcast_about">
+                                        <div>
+                                            Date <span>16. March 2022</span>
+                                        </div>
+                                        <div className="">
+                                            Duration <span>1hr 20min</span>
+                                        </div>
+                                        <div>
+                                            LISTEN
+                                        </div>
                                     </div>
                                 </div>
-                                <div className="podcast_about">
-                                    <div>
-                                        Date <span>16. March 2022</span>
-                                    </div>
-                                    <div className="">
-                                        Duration <span>1hr 20min</span>
-                                    </div>
-                                    <div>
-                                        LISTEN
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            </motion.div>
+                        </motion.div>
                     )
                 })}
             </div>

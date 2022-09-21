@@ -43,7 +43,7 @@ nav .name {
     font-size: 20px;
     display: flex;
     justify-content: space-between;
-    background-color: wheat;
+    background-color: white;
 }
 
 nav .logo {
@@ -179,6 +179,7 @@ section .work {
     border-bottom: 1px solid;
     padding-bottom: 60px;
     margin-bottom: 60px;
+    height: fit-content;
 }
 
 section .work:last-child {
@@ -238,7 +239,7 @@ section .work_desc_about_type {
 
 section .other {
     width: 100%;
-    height: auto;
+    height: fit-content;
 }
 
 section .other_top_title {

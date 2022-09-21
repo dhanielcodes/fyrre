@@ -5,6 +5,7 @@ import '../styles/pages/home.css';
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
+import { motion } from "framer-motion"
 
 
 
@@ -92,124 +93,208 @@ const Home = ({routerLink}) => {
         }
     ]
 
-    //let navigate = useNavigate()
-
-    /* const routerLink = (path) => {
-        gsap.from(window, {opacity: 0})
-        setTimeout(() => {
-            gsap.to(window, {opacity: 1})
-            navigate(path)
-            window.scrollTo(0, 0)
-        }, 2000)
-    } */
-
     let header = useRef(null)
     let news = useRef(null)
     let headerAbout = useRef(null)
     let headerAbout2 = useRef(null)
     let headerAbout3 = useRef(null)
     let bannerImg = useRef(null)
-    let section = useRef(null)
     let magPanel = useRef(null)
+    let podCast = useRef(null)
+    let podCasts = useRef([])
+    podCasts.current = []
+    let author = useRef(null)
+    let authorss = useRef(null)
+
+    const addToRefs = (el) => {
+        if (el && !podCasts.current.includes(el)) {
+          podCasts.current.push(el);
+        }
+    };
+
+    const animation = () => {
+        gsap.from(header, {
+            duration: 1.3,
+            translateY: "100%",
+            ease: "expo",
+            delay: 3.6
+        })
+        gsap.to(header, {
+            translateY: "0%",
+            ease: "expo",
+            duration: 1.3,
+            delay: 3.6
+
+        })
+
+
+        gsap.from(news, {
+            opacity: 0,
+            ease: "expo",
+            duration: 1.3,
+            delay: 4.4
+
+        })
+        gsap.to(news, {
+            opacity: 1,
+            ease: "expo",
+            duration: 1.3,
+            delay: 4.4
+        })
+
+
+        gsap.from(headerAbout, {
+            translateY: "-100%",
+            ease: "expo",
+            duration: 1,
+            delay: 4.4
+
+        })
+        gsap.to(headerAbout, {
+            translateY: "0%",
+            ease: "expo",
+            duration: 1,
+            delay: 4.4
+        })
+
+
+        gsap.from(headerAbout2, {
+            translateY: "-100%",
+            ease: "expo",
+            duration: 1,
+            delay: 4.4
+
+        })
+        gsap.to(headerAbout2, {
+            translateY: "-0%",
+            ease: "expo",
+            duration: 1,
+            delay: 4.4
+        })
+
+        gsap.from(headerAbout3, {
+            opacity: 0,
+            ease: "expo",
+            duration: 1,
+            delay: 4.4
+
+        })
+        gsap.to(headerAbout3, {
+            opacity: 1,
+            ease: "expo",
+            duration: 1.3,
+            delay: 4.4
+        })
+
+        gsap.from(bannerImg, {
+            opacity: 0,
+            ease: "expo",
+            duration: 1.3,
+            delay: 4.4,
+            scrub: 1,
+        })
+        gsap.to(bannerImg, {
+            opacity: 1,
+            ease: "expo",
+            duration: 1.3,
+            delay: 4.4,
+            scrub: 1,
+        })
+    }
 
     useEffect(() => {
         window.addEventListener("load", () => {
-            gsap.from(header, {
-                duration: 1.3,
-                translateY: "100%",
-                ease: "expo",
-            })
-            gsap.to(header, {
-                translateY: "0%",
-                ease: "expo",
-                duration: 1.3
-            })
-    
-    
-            gsap.from(news, {
-                opacity: 0,
-                ease: "expo",
-                duration: 1.3,
-                delay: .8
-    
-            })
-            gsap.to(news, {
-                opacity: 1,
-                ease: "expo",
-                duration: 1.3,
-                delay: .8
-            })
-    
-    
-            gsap.from(headerAbout, {
-                translateY: "-100%",
-                ease: "expo",
-                duration: 1,
-                delay: .8
-    
-            })
-            gsap.to(headerAbout, {
-                translateY: "0%",
-                ease: "expo",
-                duration: 1,
-                delay: .8
-            })
-    
-    
-            gsap.from(headerAbout2, {
-                translateY: "-100%",
-                ease: "expo",
-                duration: 1,
-                delay: .8
-    
-            })
-            gsap.to(headerAbout2, {
-                translateY: "-0%",
-                ease: "expo",
-                duration: 1,
-                delay: .8
-            })
-    
-            gsap.from(headerAbout3, {
-                opacity: 0,
-                ease: "expo",
-                duration: 1,
-                delay: .8
-    
-            })
-            gsap.to(headerAbout3, {
-                opacity: 1,
-                ease: "expo",
-                duration: 1.3,
-                delay: .8
-            })
-    
-            gsap.from(bannerImg, {
-                opacity: 0,
-                ease: "expo",
-                duration: 1.3,
-                delay: .8,
-                scrub: 1,
-            })
-            gsap.to(bannerImg, {
-                opacity: 1,
-                ease: "expo",
-                duration: 1.3,
-                delay: .8,
-                scrub: 1,
-            })
-    
-    
-           /*  ScrollTrigger.create({
-                trigger: section,
-                pin: magPaneil,
-                start: "top top"
-            }) */
+            animation()
         })
+        ScrollTrigger.create({
+            trigger: magPanel,
+            pin: magPanel,
+            start: "top +=60",
+        })
+
+        gsap.from(podCast, {
+            duration: 1.3,
+            translateY: "100%",
+            ease: "expo",
+        })
+        gsap.to(podCast, {
+            translateY: "0%",
+            ease: "expo",
+            duration: 1.3,
+            scrollTrigger: {
+                trigger: podCast
+            }
+        })
+        
+        gsap.from(podCasts.current, {
+            duration: 1.3,
+            translateY: "10%",
+            opacity: 0,
+            ease: "expo",
+        })
+
+        gsap.to(podCasts.current, {
+            translateY: "0%",
+            opacity: 1,
+            ease: "expo",
+            duration: 1.3,
+            stagger: .2,
+            scrollTrigger: {
+                trigger: podCasts.current,
+
+            }
+        })
+
+
+        gsap.from(author, {
+            duration: 1.3,
+            translateY: "100%",
+            ease: "expo",
+        })
+        gsap.to(author, {
+            translateY: "0%",
+            ease: "expo",
+            duration: 1.3,
+            scrollTrigger: {
+                trigger: author
+            }
+        })
+        
+        gsap.from(authorss, {
+            duration: 1.3,
+            translateY: "10%",
+            opacity: 0,
+            ease: "expo",
+        })
+
+        gsap.to(authorss, {
+            translateY: "0%",
+            opacity: 1,
+            ease: "expo",
+            duration: 1.3,
+            scrollTrigger: {
+                trigger: authorss,
+
+            }
+        })
+
+
 
         
 
     })
+
+    const workVariants = {
+        offscreen: {
+            y: "10%",
+            opacity: 0
+        },
+        onscreen:{
+            y: "0%",
+            opacity: 1,
+            transition: {type: "spring", duration: 1, bounce: 0.3}
+        }
+    }
 
     const para = document.querySelector(".banner")
     window.addEventListener("scroll", () => {
@@ -217,6 +302,8 @@ const Home = ({routerLink}) => {
   
         para.style.bottom = val * -0.2 + "px";
       });
+
+      
 
     
 
@@ -278,43 +365,45 @@ const Home = ({routerLink}) => {
             {/* WORKs SECTION */}
 
             <div>
-                <section ref={el => section = el}>
+                <section>
                         <div className="works">
                             {
                                 work.map((x) => {
                                     return (
-                                        <div className="work">
-                                            <div className="work_img">
-                                                <img src={x.img} alt="" />
-                                            </div>
-                                            <div className="work_desc">
-                                                <div>
-                                                    <div className="work_desc_title">
-                                                        {x.title}
+                                        <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.4   }}>
+                                            <motion.div className="work" variants={workVariants}  >
+                                                <div className="work_img">
+                                                    <img src={x.img} alt="" />
+                                                </div>
+                                                <div className="work_desc">
+                                                    <div>
+                                                        <div className="work_desc_title">
+                                                            {x.title}
+                                                        </div>
+                                                        <div className="work_desc_content">
+                                                            {x.desc}
+                                                        </div>
                                                     </div>
-                                                    <div className="work_desc_content">
-                                                        {x.desc}
+                                                    <div className="work_desc_about">
+                                                        <div className="work_desc_about_dets">
+                                                            <div>
+                                                                Text <span>Jakob Gronberg</span>
+                                                            </div>
+                                                            <div className="work_desc_about_dets_date">
+                                                                Date <span>16. March 2022</span>
+                                                            </div>
+                                                            <div>
+                                                                Read <span>1 Min</span>
+                                                            </div>
+                                                        </div>
+                                                        <div className="work_desc_about_type">
+                                                            {x.type}
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div className="work_desc_about">
-                                                    <div className="work_desc_about_dets">
-                                                        <div>
-                                                            Text <span>Jakob Gronberg</span>
-                                                        </div>
-                                                        <div className="work_desc_about_dets_date">
-                                                            Date <span>16. March 2022</span>
-                                                        </div>
-                                                        <div>
-                                                            Read <span>1 Min</span>
-                                                        </div>
-                                                    </div>
-                                                    <div className="work_desc_about_type">
-                                                        {x.type}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-                                        </div>
+                                                
+                                            </motion.div>
+                                        </motion.div>
                                     )
                                 })
                             }
@@ -377,8 +466,10 @@ const Home = ({routerLink}) => {
 
             <main>
                 <div className="experience_top">
-                        <div className="title">
-                            PODCAST
+                        <div className="split">
+                            <div className="title" ref={el => podCast = el}>
+                                PODCAST
+                            </div>
                         </div>
                         <div className="experience_more" onClick={() => routerLink("/podcasts")}>
                             ALL PODCASTS <img src={arrow} alt="" />
@@ -387,7 +478,7 @@ const Home = ({routerLink}) => {
                 <div className="experiences">
                     {pods.map((x) => {
                         return (
-                            <div className="experience">
+                            <div className="experience" ref={addToRefs}>
                                 <img className="experience_img" src={x.img} alt="" />
                                 <div className="experience_desc">
                                     <div className="experience_desc_title">
@@ -413,14 +504,16 @@ const Home = ({routerLink}) => {
 
             <aside>
                 <div className="author_top">
-                    <div className="title">
-                        AUTHORS
+                    <div className="split">
+                        <div className="title" ref={el => author = el}>
+                            AUTHORS
+                        </div>
                     </div>
                     <div className="author_more" onClick={() => routerLink("/authors")}>
                         ALL AUTHORS <img src={arrow} alt="" />
                     </div>
                 </div>
-                <div className="authors">
+                <div className="authors" ref={el => authorss = el}>
                     {authors.map((x) => {
                         return (
                             <div className="author_profile">
