@@ -45,3 +45,15 @@ body {
 .split {
     overflow: hidden;
 }
+
+.cursor {
+    position: fixed;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 50%;
+    overflow: hidden;
+    pointer-events: none;
+    transform: translate3d(0, 0, 0);
+}
