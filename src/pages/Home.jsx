@@ -112,6 +112,9 @@ const Home = ({routerLink}) => {
         }
     };
 
+  const match = gsap.matchMedia()
+
+
     const animation = () => {
         gsap.from(header, {
             duration: 1.3,
@@ -203,81 +206,83 @@ const Home = ({routerLink}) => {
     }
 
     useEffect(() => {
-        window.addEventListener("load", () => {
-            animation()
-        })
-        gsap.to(magPanel, {
-            scrollTrigger: {
-                trigger: magPanel,
-                pin: magPanel,
-                start: "top +=60",
-            }
-        })
-
-        gsap.from(podCast, {
-            duration: 1.3,
-            translateY: "100%",
-            ease: "expo",
-        })
-        gsap.to(podCast, {
-            translateY: "0%",
-            ease: "expo",
-            duration: 1.3,
-            scrollTrigger: {
-                trigger: podCast
-            }
-        })
-        
-        gsap.from(podCasts.current, {
-            duration: 1.3,
-            translateY: "10%",
-            opacity: 0,
-            ease: "expo",
-        })
-
-        gsap.to(podCasts.current, {
-            translateY: "0%",
-            opacity: 1,
-            ease: "expo",
-            duration: 1.3,
-            stagger: .2,
-            scrollTrigger: {
-                trigger: podCasts.current,
-
-            }
-        })
-
-
-        gsap.from(author, {
-            duration: 1.3,
-            translateY: "100%",
-            ease: "expo",
-        })
-        gsap.to(author, {
-            translateY: "0%",
-            ease: "expo",
-            duration: 1.3,
-            scrollTrigger: {
-                trigger: author
-            }
-        })
-        
-        gsap.from(authorss, {
-            duration: 1.3,
-            translateY: "10%",
-            opacity: 0,
-            ease: "expo",
-        })
-
-        gsap.to(authorss, {
-            translateY: "0%",
-            opacity: 1,
-            ease: "expo",
-            duration: 1.3,
-            scrollTrigger: {
-                trigger: authorss,
-
-            }
+        match.add("(min-width: 800px)", () => {
+            window.addEventListener("load", () => {
+                animation()
+            })
+            gsap.to(magPanel, {
+                scrollTrigger: {
+                    trigger: magPanel,
+                    pin: magPanel,
+                    start: "top +=60",
+                }
+            })
+    
+            gsap.from(podCast, {
+                duration: 1.3,
+                translateY: "100%",
+                ease: "expo",
+            })
+            gsap.to(podCast, {
+                translateY: "0%",
+                ease: "expo",
+                duration: 1.3,
+                scrollTrigger: {
+                    trigger: podCast
+                }
+            })
+            
+            gsap.from(podCasts.current, {
+                duration: 1.3,
+                translateY: "10%",
+                opacity: 0,
+                ease: "expo",
+            })
+    
+            gsap.to(podCasts.current, {
+                translateY: "0%",
+                opacity: 1,
+                ease: "expo",
+                duration: 1.3,
+                stagger: .2,
+                scrollTrigger: {
+                    trigger: podCasts.current,
+    
+                }
+            })
+    
+    
+            gsap.from(author, {
+                duration: 1.3,
+                translateY: "100%",
+                ease: "expo",
+            })
+            gsap.to(author, {
+                translateY: "0%",
+                ease: "expo",
+                duration: 1.3,
+                scrollTrigger: {
+                    trigger: author
+                }
+            })
+            
+            gsap.from(authorss, {
+                duration: 1.3,
+                translateY: "10%",
+                opacity: 0,
+                ease: "expo",
+            })
+    
+            gsap.to(authorss, {
+                translateY: "0%",
+                opacity: 1,
+                ease: "expo",
+                duration: 1.3,
+                scrollTrigger: {
+                    trigger: authorss,
+    
+                }
+            })
         })
 
 
@@ -285,6 +290,8 @@ const Home = ({routerLink}) => {
         
 
     })
+
+   
 
     const workVariants = {
         offscreen: {

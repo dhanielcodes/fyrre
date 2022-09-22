@@ -709,7 +709,7 @@ footer img {
         padding: 200px 0;
         padding-bottom: 60px;
     }
-    footer .title {
+    footer .title div {
         color: white;
         font-size: 48px;
         font-weight: 500;
@@ -789,7 +789,7 @@ footer img {
     footer form .form_button {
         width: 100%;
     }
-    footer .title {
+    footer .title div {
         color: white;
         font-size: 36px;
         font-weight: 500;
