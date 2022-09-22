@@ -206,10 +206,12 @@ const Home = ({routerLink}) => {
         window.addEventListener("load", () => {
             animation()
         })
-        ScrollTrigger.create({
-            trigger: magPanel,
-            pin: magPanel,
-            start: "top +=60",
+        gsap.to(magPanel, {
+            scrollTrigger: {
+                trigger: magPanel,
+                pin: magPanel,
+                start: "top +=60",
+            }
         })
 
         gsap.from(podCast, {
@@ -296,16 +298,6 @@ const Home = ({routerLink}) => {
         }
     }
 
-    const para = document.querySelector(".banner")
-    window.addEventListener("scroll", () => {
-        let val = window.scrollY;
-  
-        para.style.bottom = val * -0.2 + "px";
-      });
-
-      
-
-    
 
     return ( 
         <div>

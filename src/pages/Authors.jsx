@@ -1,6 +1,6 @@
 import "../styles/pages/authors.css"
 import { useEffect } from 'react';
-import { HeaderTitle, Art } from '../components'
+import { HeaderTitle } from '../components'
 import { jakob, jensen, anne} from "../images/index"
 import gsap from 'gsap'
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -58,7 +58,7 @@ const Authors = () => {
 
 
     return ( 
-        <div>
+        <div data-scroll-section>
             <div className='split'>
                     <div  ref={el => header = el}>
                         <HeaderTitle title="AUHTORS"/>

@@ -489,7 +489,7 @@ footer .main_top {
     justify-content: space-between;
 }
 
-footer .title {
+footer .title div {
     color: white;
     font-size: 78px;
     font-weight: 500;

@@ -1,6 +1,6 @@
 import "../styles/pages/podcasts.css"
 import { useEffect } from 'react';
-import { HeaderTitle, Art } from '../components'
+import { HeaderTitle } from '../components'
 import { pod1, pod2, pod3} from "../images/index"
 import gsap from 'gsap'
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -52,7 +52,7 @@ const Podcasts = () => {
         }
     }
     return ( 
-        <div className="podcasts">
+        <div className="podcasts" data-scroll-section>
             <div className='split'>
                     <div  ref={el => header = el}>
                         <HeaderTitle title="PODCAST"/>

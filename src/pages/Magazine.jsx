@@ -127,7 +127,7 @@ const Magazine = () => {
 
     })
     return ( 
-        <div>
+        <div data-scroll-section>
             <div>
                 <div className='split'>
                     <div  ref={el => header = el}>
