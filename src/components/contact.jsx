@@ -140,7 +140,7 @@ const Contact = ({routerLink}) => {
                 </div>
                 <div className='end' ref={el => other2 = el}>
                     <div className='end_copy'>
-                        © Made by Daniel Adekoya -  Design by Pawel Gola
+                        © Made by <a href="https://twitter.com/dhaniel0x" target="_blank" rel="noreferrer">Daniel Adekoya</a> - Design by <a href="https://www.gola.io/templates" target="_blank" rel="noreferrer">Pawel Gola</a> 
                     </div>
                     <div className='end_socials'>
                         <a target="_blank" rel="noreferrer" href="https://twitter.com/dhaniel0x">
