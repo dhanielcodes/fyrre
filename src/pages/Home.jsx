@@ -284,15 +284,7 @@ const Home = ({routerLink}) => {
                 }
             })
         })
-
-
-
-        
-
     })
-
-   
-
     const workVariants = {
         offscreen: {
             y: "10%",
