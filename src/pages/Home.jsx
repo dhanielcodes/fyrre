@@ -1,4 +1,4 @@
-import { banner } from "../images/index";
+import { banner, da } from "../images/index";
 import { HeaderTitle } from "../components/index";
 import {
   hope,
@@ -18,6 +18,17 @@ import {
   anne,
   cris,
   jensen,
+  ada,
+  bot,
+  hpsb,
+  pmb,
+  vue,
+  mrt,
+  kc,
+  propkip,
+  nasida,
+  agency,
+  recital,
 } from "../images/index";
 import "../styles/pages/home.css";
 import gsap from "gsap";
@@ -30,55 +41,52 @@ const Home = ({ routerLink }) => {
 
   const work = [
     {
-      title: "Hope dies last",
-      img: hope,
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas dui id ornare arcu odio ut sem. Cras ornare arcu dui vivamus arcu felis bibendum ut. Porttitor leo a diam.",
-      type: "ART",
+      title: "Vue Nav UI",
+      desc: "This is a custom navbar vuejs package.",
+      link: "https://dhanielcodes.github.io/vue-navigation-ui/",
+      type: "VUE",
+      img: vue,
     },
     {
-      title: "The best art museums",
-      img: best,
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas dui id ornare arcu odio ut sem. Cras ornare arcu dui vivamus arcu felis bibendum ut. Porttitor leo a diam.",
-      type: "SCULPTURES",
+      title: "TM Agency",
+      desc: "It's the ultimate solution designed to deliver efficiency, security, and seamlessness to your agency banking experience.",
+      link: "https://agencybanking.tm30.net/",
+      type: "REACT/VITE",
+      img: agency,
     },
     {
-      title: "The devil is the details",
-      img: devil,
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas dui id ornare arcu odio ut sem. Cras ornare arcu dui vivamus arcu felis bibendum ut. Porttitor leo a diam.",
-      type: "ART",
-    },
-    {
-      title: "An inde­struc­tible hope",
-      img: hope2,
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas dui id ornare arcu odio ut sem. Cras ornare arcu dui vivamus arcu felis bibendum ut. Porttitor leo a diam.",
-      type: "ART",
-    },
-    {
-      title: "Street art festival",
-      img: street,
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas dui id ornare arcu odio ut sem. Cras ornare arcu dui vivamus arcu felis bibendum ut. Porttitor leo a diam.",
-      type: "STREET ART",
-    },
-    {
-      title: "Through the eyes of street artists",
-      img: eyes,
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas dui id ornare arcu odio ut sem. Cras ornare arcu dui vivamus arcu felis bibendum ut. Porttitor leo a diam.",
-      type: "STREET ART",
+      title: "Recital Finance",
+      desc: "Supercharged Payment and Financial Operations Infrastructure for Growing Businesses",
+      link: "https://recital.finance/",
+      type: "REACT/NEXT",
+      img: recital,
     },
   ];
 
   const pods = [
     {
-      title: "The Problem of today’s cultural development",
-      img: pod1,
+      title: "Frontend Engineer",
+      place: "RARA",
+      period: "April 2021 - June 2021",
+      type: "Remote - Contract",
+      site: "https://rara.social/",
+      mode: "Part Time",
     },
     {
-      title: "The hidden messages of Jack Nielson",
-      img: pod2,
+      title: "Frontend Engineer",
+      place: "Dork",
+      period: "January 2021 - October 2022",
+      type: "Remote - Full time",
+      site: "https://www.instagram.com/dork.ng/",
+      mode: "Full Time",
     },
     {
-      title: "Behind the scenes of the street art culture",
-      img: pod3,
+      title: "Frontend Engineer",
+      place: "TM30",
+      period: "October 2022 - Present",
+      type: "Onsite - Full time",
+      site: "https://tm30.net/",
+      mode: "Full Time",
     },
   ];
 
@@ -119,8 +127,8 @@ const Home = ({ routerLink }) => {
   let podCast = useRef(null);
   let podCasts = useRef([]);
   podCasts.current = [];
-  let author = useRef(null);
-  let authorss = useRef(null);
+  //let author = useRef(null);
+  //let authorss = useRef(null);
 
   const addToRefs = (el) => {
     if (el && !podCasts.current.includes(el)) {
@@ -257,7 +265,7 @@ const Home = ({ routerLink }) => {
         },
       });
 
-      gsap.from(author, {
+      /*  gsap.from(author, {
         duration: 1.3,
         translateY: "100%",
         ease: "expo",
@@ -286,7 +294,7 @@ const Home = ({ routerLink }) => {
         scrollTrigger: {
           trigger: authorss,
         },
-      });
+      }); */
     });
   }, []);
   const workVariants = {
@@ -307,11 +315,11 @@ const Home = ({ routerLink }) => {
       <header>
         <div className="split">
           <div ref={(el) => (header = el)}>
-            <HeaderTitle title="ART & LIFE" />
+            <HeaderTitle title="DHANIEL***" />
           </div>
         </div>
         <div ref={(el) => (news = el)} className="news">
-          NEWS TICKER+++
+          DANIEL DAMILOLA ADEKOYA +++
         </div>
         <div className="banner2">
           <img className="banner_img" src={banner} alt="" />
@@ -319,7 +327,7 @@ const Home = ({ routerLink }) => {
         <div className="about">
           <div className="split">
             <div className="about_name" ref={(el) => (headerAbout = el)}>
-              DON'T CLOSE YOUR EYES
+              Frontend Engineer & UI Engineer
             </div>
           </div>
           <div className="about_content">
@@ -328,10 +336,11 @@ const Home = ({ routerLink }) => {
                 ref={(el) => (headerAbout2 = el)}
                 className="about_content_text1"
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Egestas dui id ornare arcu odio ut sem. Cras ornare arcu dui
-                vivamus arcu felis bibendum ut. Porttitor leo a diam.
+                I'm a solution focused frontend developer with experience in
+                web-based applications. Participated in development and
+                implementation of web based solutions, while gaining real World
+                experience. Learning multiple systems and efficient development
+                techniques also 🙂.
               </div>
             </div>
             <div
@@ -374,14 +383,24 @@ const Home = ({ routerLink }) => {
                 >
                   <motion.div className="work" variants={workVariants}>
                     <div className="work_img">
-                      <img src={x.img} alt="" />
+                      <img
+                        style={{ width: "100%", height: "100%" }}
+                        src={x.img}
+                        alt=""
+                      />
                     </div>
                     <div className="work_desc">
                       <div>
                         <div className="work_desc_title">{x.title}</div>
                         <div className="work_desc_content">{x.desc}</div>
                       </div>
-                      <div className="work_desc_about">
+                      <div className="work_desc_link">
+                        <a href={x?.link} target="_blank" rel="noreferrer">
+                          {x?.link}
+                        </a>
+                        <div>{x?.type}</div>
+                      </div>
+                      {/*     <div className="work_desc_about">
                         <div className="work_desc_about_dets">
                           <div>
                             Text <span>Jakob Gronberg</span>
@@ -394,7 +413,7 @@ const Home = ({ routerLink }) => {
                           </div>
                         </div>
                         <div className="work_desc_about_type">{x.type}</div>
-                      </div>
+                      </div> */}
                     </div>
                   </motion.div>
                 </motion.div>
@@ -406,7 +425,7 @@ const Home = ({ routerLink }) => {
               className="section_more"
               onClick={() => routerLink("/magazine")}
             >
-              ALL ARTICLES <img src={arrow} alt="" />
+              ALL WORKS <img src={arrow} alt="" />
             </div>
           </div>
           <div ref={(el) => (magPanel = el)} className="other">
@@ -443,7 +462,7 @@ const Home = ({ routerLink }) => {
         </section>
         <div className="sections_more2">
           <div className="section_more" onClick={() => routerLink("/magazine")}>
-            ALL ARTICLES <img src={arrow} alt="" />
+            ALL WORKS <img src={arrow} alt="" />
           </div>
         </div>
       </div>
@@ -454,30 +473,38 @@ const Home = ({ routerLink }) => {
         <div className="experience_top">
           <div className="split">
             <div className="title" ref={(el) => (podCast = el)}>
-              PODCAST
+              EXPERIENCES
             </div>
           </div>
           <div
             className="experience_more"
             onClick={() => routerLink("/podcasts")}
           >
-            ALL PODCASTS <img src={arrow} alt="" />
+            ALL EXPERIENCES <img src={arrow} alt="" />
           </div>
         </div>
         <div className="experiences">
           {pods.map((x) => {
             return (
               <div className="experience" ref={addToRefs}>
-                <img className="experience_img" src={x.img} alt="" />
+                <img className="experience_img" src={da} alt="" />
                 <div className="experience_desc">
-                  <div className="experience_desc_title">{x.title}</div>
-                  <div className="experience_desc_about_dets">
-                    <div className="experience_desc_about_dets_date">
-                      Date <span>16.06.2022</span>
-                    </div>
-                    <div className="">
-                      Duration <span>1h 20 Min</span>
-                    </div>
+                  <div className="experience_desc_title">{x?.title}</div>
+                  <div
+                    style={{
+                      margin: "0px 0px 20px 0",
+                      fontSize: "20px",
+                      padding: "4px 10px",
+                      border: "1px solid",
+                      width: "fit-content",
+                    }}
+                  >
+                    {x?.mode}
+                  </div>
+
+                  <div className="experience_desc_link">
+                    <a href={x?.site}>{x?.place}</a>
+                    <div>{x?.type}</div>
                   </div>
                 </div>
               </div>
@@ -488,7 +515,7 @@ const Home = ({ routerLink }) => {
 
       {/* AUTHORS SECTION */}
 
-      <aside>
+      {/*  <aside>
         <div className="author_top">
           <div className="split">
             <div className="title" ref={(el) => (author = el)}>
@@ -519,7 +546,7 @@ const Home = ({ routerLink }) => {
             );
           })}
         </div>
-      </aside>
+      </aside> */}
     </div>
   );
 };

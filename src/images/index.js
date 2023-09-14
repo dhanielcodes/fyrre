@@ -36,4 +36,23 @@ import twitter2 from './twitter2.svg'
 import line from './line.svg'
 import loader from './loader.svg'
 
-export { loader, banner, hope, smile, twitter, twitch, spotify, linkedin, github, figma, insta, youtube, wifi, wifi2, youtube2, insta2, twitter2, dribbble, cover, line, arrow, best, hope2, street, devil, eyes, eyes2, da, pod1, pod2, pod3, jakob, anne, jane, jensen, anna, cris }
+
+import doa from './doa.svg'
+
+import pmb from './pmb.svg'
+import hpsb from './hpsb.svg'
+import bot from './bot.svg'
+import vue from './vue.svg'
+import mrt from './mrt.svg'
+import ada from './ada.svg'
+import kc from './kc.svg'
+import propkip from './propkip.svg'
+import nasida from './nasida.svg'
+import agency from './agency.svg'
+import recital from './recital.svg'
+
+
+
+import dot from './dot.svg'
+
+export { loader, banner, hope, smile, twitter, twitch, spotify, linkedin, github, figma, insta, youtube, wifi, wifi2, youtube2, insta2, twitter2, dribbble, cover, line, arrow, best, hope2, street, devil, eyes, eyes2, da, pod1, pod2, pod3, jakob, anne, jane, jensen, anna, cris,  propkip, nasida, doa, dot, pmb, hpsb, bot, vue, mrt, ada, kc, agency, recital }

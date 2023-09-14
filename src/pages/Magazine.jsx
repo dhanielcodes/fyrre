@@ -1,5 +1,23 @@
 import { HeaderTitle, Art } from "../components";
-import { eyes2, hope, best, devil, eyes, street } from "../images/index";
+import {
+  eyes2,
+  hope,
+  best,
+  devil,
+  eyes,
+  street,
+  ada,
+  bot,
+  hpsb,
+  pmb,
+  vue,
+  mrt,
+  kc,
+  propkip,
+  nasida,
+  agency,
+  recital,
+} from "../images/index";
 import "../styles/pages/magazine.css";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -51,40 +69,81 @@ const Magazine = () => {
 
   let pods = [
     {
-      title: "Hope dies last",
-      img: hope,
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas dui id ornare arcu odio ut sem. Cras ornare arcu dui vivamus arcu felis bibendum ut. Porttitor leo a diam.",
-      type: "ART",
+      title: "Vue Nav UI",
+      desc: "This is a custom navbar vuejs package.",
+      link: "https://dhanielcodes.github.io/vue-navigation-ui/",
+      type: "VUE",
+      img: vue,
     },
     {
-      title: "Don’t close your eyes",
-      img: eyes2,
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas dui id ornare arcu odio ut sem. Cras ornare arcu dui vivamus arcu felis bibendum ut. Porttitor leo a diam.",
-      type: "ART",
+      title: "TM Agency",
+      desc: "It's the ultimate solution designed to deliver efficiency, security, and seamlessness to your agency banking experience.",
+      link: "https://agencybanking.tm30.net/",
+      type: "REACT/VITE",
+      img: agency,
     },
     {
-      title: "The best art museums",
-      img: best,
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas dui id ornare arcu odio ut sem. Cras ornare arcu dui vivamus arcu felis bibendum ut. Porttitor leo a diam.",
-      type: "SCULPTURES",
+      title: "Recital Finance",
+      desc: "Supercharged Payment and Financial Operations Infrastructure for Growing Businesses",
+      link: "https://recital.finance/",
+      type: "REACT/NEXT",
+      img: recital,
     },
     {
-      title: "The devil is the details",
-      img: devil,
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas dui id ornare arcu odio ut sem. Cras ornare arcu dui vivamus arcu felis bibendum ut. Porttitor leo a diam.",
-      type: "ART",
+      title: "MRT Management Tool",
+      desc: "It used by organisations to measure, review and track an employee's performance.",
+      link: "https://mrtstaff.com/",
+      type: "VUE",
+      img: mrt,
     },
     {
-      title: "An indestructible hope",
-      img: eyes,
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas dui id ornare arcu odio ut sem. Cras ornare arcu dui vivamus arcu felis bibendum ut. Porttitor leo a diam.",
-      type: "SCULPTURES",
+      title: "Propkip",
+      desc: "This is a service provision software, get your quick service easily e.g laundry, plumbing etc.",
+      link: "https://www.propkip.com/",
+      type: "VUE",
+      img: propkip,
     },
     {
-      title: "Street art festival",
-      img: street,
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas dui id ornare arcu odio ut sem. Cras ornare arcu dui vivamus arcu felis bibendum ut. Porttitor leo a diam.",
-      type: "STREET ART",
+      title: "NASIDA Website",
+      desc: "NASIDA is the Nasarawa Investment and Development Agency, created through an act of the Nasarawa State House of Assembly to initiate, promote, facilitate and coordinate investments in Nasarawa State, whether it be public private partnerships, privatization, concessions or commercialization of state owned assets.",
+      link: "https://www.nasida.na.gov.ng/",
+      type: "VUE",
+      img: nasida,
+    },
+    {
+      title: "Hope Payment Service Bank",
+      desc: "This is a microfinance bank, can be used to receive, send and make bill payments and money transfers.",
+      link: "https://hopepsbank.com/",
+      type: "VUE",
+      img: hpsb,
+    },
+    {
+      title: "KC MICROFINANCE BANK",
+      desc: "KC is a microfinance bank solution, can be used to receive, send and make money transfers",
+      link: "https://ibank.kcmfb.com/",
+      type: "REACT",
+      img: kc,
+    },
+    {
+      title: "PayMyBills Web",
+      desc: "Paymybills helps you to add and manage all your bills in one place. View a list of all your upcoming bills and their due dates.",
+      link: "https://paymybills.ng/",
+      type: "REACT",
+      img: pmb,
+    },
+    {
+      title: "Adashi Savings Platform",
+      desc: "Adashi is savings platform that gives you variety of options to save up your funds.",
+      link: "https://adashiesusuakawo.com/",
+      type: "REACT",
+      img: ada,
+    },
+    {
+      title: "Boton",
+      desc: "A simple CSS library for getting nice styled custom buttons.",
+      link: "https://boton.vercel.app/",
+      type: "CSS",
+      img: bot,
     },
   ];
 
@@ -123,36 +182,59 @@ const Magazine = () => {
       <div>
         <div className="split">
           <div ref={(el) => (header = el)}>
-            <HeaderTitle title="MAGAZINE" />
+            <HeaderTitle title="*WORKS*" />
           </div>
         </div>
         <div className="magazine_top" ref={(el) => (magTop = el)}>
           <div>Categories</div>
           <div className="categories">
-            <div onClick={onFilterAll} className="category_type">
+            <div
+              onClick={onFilterAll}
+              className="category_type"
+              style={{ borderWidth: podsFilter ? 2 : 1 }}
+            >
               ALL
             </div>
-            <div onClick={onFilterArt} className="category_type">
-              ART
+            <div
+              onClick={onFilterArt}
+              className="category_type"
+              style={{ borderWidth: filterArt ? 2 : 1 }}
+            >
+              VUE / NUXT
             </div>
-            <div onClick={onFilterStreetArt} className="category_type">
-              STREET ART
+            <div
+              onClick={onFilterSculpture}
+              className="category_type"
+              style={{ borderWidth: filterSculpture ? 2 : 1 }}
+            >
+              REACT / NEXT
             </div>
-            <div onClick={onFilterSculpture} className="category_type">
-              SCULPTURE
+            <div
+              onClick={onFilterStreetArt}
+              className="category_type"
+              style={{ borderWidth: filterStreetArt ? 2 : 1 }}
+            >
+              CSS
             </div>
           </div>
         </div>
         <div className="magazine" ref={(el) => (mag = el)}>
           {podsFilter ? <Art array={pods} /> : null}
           {filterArt ? (
-            <Art array={pods.filter((x) => x.type === "ART")} />
-          ) : null}
-          {filterSculpture ? (
-            <Art array={pods.filter((x) => x.type === "SCULPTURES")} />
+            <Art array={pods.filter((x) => x.type === "VUE")} />
           ) : null}
           {filterStreetArt ? (
-            <Art array={pods.filter((x) => x.type === "STREET ART")} />
+            <Art array={pods.filter((x) => x.type === "CSS")} />
+          ) : null}
+          {filterSculpture ? (
+            <Art
+              array={pods.filter(
+                (x) =>
+                  x.type === "REACT/VITE" ||
+                  x.type === "REACT/NEXT" ||
+                  x.type === "REACT"
+              )}
+            />
           ) : null}
         </div>
       </div>

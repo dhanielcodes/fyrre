@@ -145,7 +145,7 @@ function App() {
       <div className="loader" ref={(el) => (loader2 = el)}>
         <div className="split">
           <h1 ref={(el) => (animname = el)} style={{ color: "white" }}>
-            FYRRE ART
+            DHANIEL
           </h1>
         </div>
       </div>
