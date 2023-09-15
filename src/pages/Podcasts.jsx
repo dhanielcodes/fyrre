@@ -55,7 +55,7 @@ const Podcasts = () => {
     <div className="podcasts" data-scroll-section>
       <div className="split">
         <div ref={(el) => (header = el)}>
-          <HeaderTitle title="PODCAST" />
+          <HeaderTitle title="EXPERIENCE" />
         </div>
       </div>
       <div className="podcast_list">

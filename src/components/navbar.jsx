@@ -23,8 +23,7 @@ const Navbar = ({ routerLink }) => {
         </div>
         <div className="nav_other">
           <div onClick={() => routerLink("/magazine")}>WORKS</div>
-          <div onClick={() => routerLink("/authors")}>EXPERIENCE</div>
-          <div onClick={() => routerLink("/podcasts")}>SIDES</div>
+          <div onClick={() => routerLink("/podcasts")}>EXPERIENCE</div>
           <img src={line} alt="" />
           <a
             target="_blank"

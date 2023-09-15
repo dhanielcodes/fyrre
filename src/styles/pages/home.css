@@ -166,10 +166,14 @@ header .banner img {
 section {
     margin: 50px 0;
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 40px;
 }
-
+.section_title{
+    font-size: 100px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
 section .works {
     height: auto;
 }
@@ -562,7 +566,7 @@ footer img {
     section {
         margin: 50px 0;
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-gap: 40px;
     }
     section .works {
@@ -645,6 +649,9 @@ footer img {
     }
     nav .name {
         width: 90%;
+    }
+    section {
+        grid-template-columns: 1fr;
     }
     section .work_desc_content {
         font-size: 20px;

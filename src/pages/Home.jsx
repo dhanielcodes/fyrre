@@ -1,5 +1,5 @@
 import { banner, da } from "../images/index";
-import { HeaderTitle } from "../components/index";
+import { Art, HeaderTitle } from "../components/index";
 import {
   hope,
   hope2,
@@ -123,7 +123,6 @@ const Home = ({ routerLink }) => {
   let headerAbout2 = useRef(null);
   let headerAbout3 = useRef(null);
   let bannerImg = useRef(null);
-  let magPanel = useRef(null);
   let podCast = useRef(null);
   let podCasts = useRef([]);
   podCasts.current = [];
@@ -224,13 +223,6 @@ const Home = ({ routerLink }) => {
     match.add("(min-width: 800px)", () => {
       window.addEventListener("load", () => {
         animation();
-      });
-      gsap.to(magPanel, {
-        scrollTrigger: {
-          trigger: magPanel,
-          pin: magPanel,
-          start: "top +=60",
-        },
       });
 
       gsap.from(podCast, {
@@ -372,54 +364,10 @@ const Home = ({ routerLink }) => {
       {/* WORKs SECTION */}
 
       <div>
+        <div className="section_title">WORKS</div>
         <section>
-          <div className="works">
-            {work.map((x) => {
-              return (
-                <motion.div
-                  initial="offscreen"
-                  whileInView="onscreen"
-                  viewport={{ once: true, amount: 0.4 }}
-                >
-                  <motion.div className="work" variants={workVariants}>
-                    <div className="work_img">
-                      <img
-                        style={{ width: "100%", height: "100%" }}
-                        src={x.img}
-                        alt=""
-                      />
-                    </div>
-                    <div className="work_desc">
-                      <div>
-                        <div className="work_desc_title">{x.title}</div>
-                        <div className="work_desc_content">{x.desc}</div>
-                      </div>
-                      <div className="work_desc_link">
-                        <a href={x?.link} target="_blank" rel="noreferrer">
-                          {x?.link}
-                        </a>
-                        <div>{x?.type}</div>
-                      </div>
-                      {/*     <div className="work_desc_about">
-                        <div className="work_desc_about_dets">
-                          <div>
-                            Text <span>Jakob Gronberg</span>
-                          </div>
-                          <div className="work_desc_about_dets_date">
-                            Date <span>16. March 2022</span>
-                          </div>
-                          <div>
-                            Read <span>1 Min</span>
-                          </div>
-                        </div>
-                        <div className="work_desc_about_type">{x.type}</div>
-                      </div> */}
-                    </div>
-                  </motion.div>
-                </motion.div>
-              );
-            })}
-          </div>
+          <Art array={work} />
+
           <div className="sections_more1">
             <div
               className="section_more"
@@ -427,37 +375,6 @@ const Home = ({ routerLink }) => {
             >
               ALL WORKS <img src={arrow} alt="" />
             </div>
-          </div>
-          <div ref={(el) => (magPanel = el)} className="other">
-            <div className="other_top">
-              <div className="other_top_title">PRINTMAGAZINE</div>
-              <div className="other_top_date">03/2022</div>
-            </div>
-            <img className="other_cover" src={cover} alt="" />
-            <div className="other_popular">
-              <div className="other_top_title">MOST POPULAR</div>
-              <div>
-                <div className="other_popular_popular">
-                  <div className="other_popular_popular_no">01</div>
-                  <div className="other_popular_popular_content">
-                    <div className="other_popular_popular_title">
-                      Street art festival
-                    </div>
-                    <div className="other_popular_popular_about">
-                      Text <span>Cristofer Vaccaro</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <form>
-              <div className="form_title">NEWSLETTER</div>
-              <div className="form_desc">Design News to your inbox</div>
-              <input type="email" required placeholder="Email" />
-              <div className="form_button">
-                <button>SIGN UP</button>
-              </div>
-            </form>
           </div>
         </section>
         <div className="sections_more2">
